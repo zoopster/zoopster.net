@@ -1,0 +1,22 @@
+ 
+.v-custom-heading {
+    display: block;
+    font-family: "Droid Serif", Georgia, Times, serif;
+    font-weight: normal;
+    font-style: italic;
+    float: none; 
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.special_amp {
+    font-family: "Baskerville", "Palatino Linotype", "Palatino", "Times New Roman", serif;
+    font-style: italic;
+    font-size: 1.3em;
+    line-height: 0.5em;
+    font-weight: normal;
+    color: #28c2e4;
+}
+
+
+[class^="icon-"]:not(.icon-prepend):not(.icon-append):before, [class*=" icon-"]:not(.icon-prepend):not(.icon-append):before { opacity: 0.9; font-weight: 600 !important; }
