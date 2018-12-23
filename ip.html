@@ -2,6 +2,18 @@
 <html>
 <body>
   <p>is this thing on</p>
+  <button type="button"
+    onclick="document.getElementById('demo').innerHTML = Date()">
+      Click me to display Date and Time.</button>
+<p id="demo"></p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+  <script type="text/javascript">
+     var getIPAddress = function() {
+       $.getJSON("https://jsonip.com?callback=?", function(data) {
+         alert("Your IP address is :- " + data.ip);
+       });
+     };
+   </script>
 <script>
 //get the IP addresses associated with an account
 function getIPs(callback){
