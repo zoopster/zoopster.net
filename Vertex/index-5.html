@@ -27,6 +27,7 @@
     <link href="css/shortcodes.css" rel="stylesheet" />
     <link href="css/utilities.css" rel="stylesheet" />
     <link href="css/theme-responsive.css" rel="stylesheet" />
+    <link href="plugins/aos/aos.css" rel="stylesheet" />
     <link href="plugins/owl-carousel/owl.theme.css" rel="stylesheet" />
     <link href="plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
 
@@ -239,6 +240,7 @@
                                                         <li><a class="dropdown-item" href="page-faq.html#footer">Footer Variation 2</a></li>
                                                         <li><a class="dropdown-item" href="page-services.html#footer">Footer Variation 3</a></li>
                                                         <li><a class="dropdown-item" href="index-11.html#footer">Footer Variation 4</a></li>
+                                                        <li><a class="dropdown-item" href="feature-footers.html">Footer Variation 5</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown-submenu">
@@ -313,10 +315,12 @@
                                                     </ul>
                                                 </li>
                                                 <li><a class="dropdown-item" href="page-careers.html">Careers</a></li>
+                                                <li><a class="dropdown-item" href="page-job.html">Job Page</a></li>
                                                 <li class="dropdown-submenu">
                                                     <a class="dropdown-item dropdown-toggle" href="#">Login / Register</a>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="page-login.html">Login</a></li>
+                                                        <li><a class="dropdown-item" href="page-login-2.html">Login 2</a></li>
                                                         <li><a class="dropdown-item" href="page-register.html">Register</a></li>
                                                     </ul>
                                                 </li>
@@ -520,7 +524,7 @@
                                 </nav>
                             </div>
                             <div class="header-button d-none d-sm-flex ml-3">
-                                <a class="btn v-btn standard lightgrey sf-icon-reveal mb-0 mr-0" href="#" target="_self">
+                                <a class="btn v-btn standard lightgrey sf-icon-reveal mb-0 mr-0" href="https://wrapbootstrap.com/theme/express-business-website-template-WB0TR1711" target="_self">
                                     <i class="icon-cart-4"></i><span class="text text-uppercase">Buy Me</span>
                                 </a>
                             </div>
@@ -711,7 +715,7 @@
 
                     <div class="row">
                         <div class="col-sm-3">
-                            <div class="feature-box left-icon-v2 v-animation" data-animation="flip" data-delay="200">
+                            <div class="feature-box left-icon-v2">
                                 <i class="fa fa-location-arrow v-icon icn-holder medium"></i>
                                 <div class="feature-box-text">
                                     <h3>Unlimited Possibilites</h3>
@@ -724,7 +728,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="feature-box left-icon-v2 v-animation" data-animation="flip" data-delay="200">
+                            <div class="feature-box left-icon-v2">
                                 <i class="fa fa-compress v-icon icn-holder medium"></i>
                                 <div class="feature-box-text">
                                     <h3>Full Responsive</h3>
@@ -737,7 +741,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="feature-box left-icon-v2 v-animation" data-animation="flip" data-delay="200">
+                            <div class="feature-box left-icon-v2">
                                 <i class="fa fa-fire v-icon icn-holder medium"></i>
                                 <div class="feature-box-text">
                                     <h3>Awesome Sliders</h3>
@@ -750,7 +754,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="feature-box left-icon-v2 v-animation" data-animation="flip" data-delay="200">
+                            <div class="feature-box left-icon-v2">
                                 <i class="fa fa-comments-o v-icon icn-holder medium"></i>
                                 <div class="feature-box-text">
                                     <h3>Great Support</h3>
@@ -789,151 +793,101 @@
         </div>
 
         <!--Footer-Wrap-->
-        <div class="footer-wrap footer-v3" id="footer">
-            <footer>
+        <div class="footer-wrap">
+            <footer class="footer-idea light">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-5">
                             <section class="widget">
-                                <img alt="Vertex" src="img/logo-white.png" style="height: 35px; margin-bottom: 20px;">
-                                <p class="pull-bottom-small">
-                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                                    per inceptos himenaeos. Nulla nunc dui, tristique in semper vel,
-                                    congue sed ligula auctor fringill torquent per conubia nostra.
+                                <img alt="Vertex" src="img/logo.png" style="height: 40px; margin-bottom: 20px;">
+                                <p class="fs-20">
+                                    Vertex is the innovation platform <br>
+                                    for business. And cats.
                                 </p>
-                                <p>
-                                    <a href="blog-standard-post.html">Read More →</a>
-                                </p>
-                            </section>
-                        </div>
-                        <div class="col-sm-3">
-                            <section class="widget">
-                                <div class="widget-heading">
-                                    <h4>Contact Us</h4>
-                                </div>
-                                <div class="footer-contact-info">
-                                    <ul>
-                                        <li>
-                                            <p><i class="fa fa-building"></i>Your Company </p>
-                                        </li>
-                                        <li>
-                                            <p><i class="fa fa-map-marker"></i>1 Liberty St New York, NY 5006 </p>
-                                        </li>
-                                        <li>
-                                            <p><i class="fa fa-envelope"></i><strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></p>
-                                        </li>
-                                        <li>
-                                            <p><i class="fa fa-phone"></i><strong>Phone:</strong> (123) 456-7890</p>
-                                        </li>
-                                    </ul>
-                                    <br />
+                                <span class="fs-12">Follow us on</span>
+                                <a href="#" class="primary-color fs-12">Facebook</a>,
+                                <a href="#" class="primary-color fs-12">LinkIn</a>,
+                                <a href="#" class="primary-color fs-12">Twitter</a>,
+                                <a href="#" class="primary-color fs-12">Instagram</a>
 
-                                    <div class="clearfix pt-2">
-                                        <a href="#" class="social-icon si-dark si-facebook" title="Facebook">
-                                            <i class="si-icon-facebook"></i>
-                                            <i class="si-icon-facebook"></i>
-                                        </a>
-                                        <a href="#" class="social-icon si-dark si-twitter" title="Twitter">
-                                            <i class="si-icon-twitter"></i>
-                                            <i class="si-icon-twitter"></i>
-                                        </a>
-                                        <a href="#" class="social-icon si-dark si-instagram" title="Instagram">
-                                            <i class="si-icon-instagram"></i>
-                                            <i class="si-icon-instagram"></i>
-                                        </a>
-                                        <a href="#" class="social-icon si-dark si-vk" title="Vk">
-                                            <i class="si-icon-vk"></i>
-                                            <i class="si-icon-vk"></i>
-                                        </a>
-                                    </div>
-                                </div>
                             </section>
                         </div>
                         <div class="col-sm-3">
-                            <section class="widget v-recent-entry-widget">
+                            <section class="widget">
                                 <div class="widget-heading">
-                                    <h4>Recent Posts</h4>
+                                    <h4>Solutions</h4>
                                 </div>
                                 <ul>
-                                    <li>
-                                        <a href="blog-standard-post.html">Amazing Standard Post</a>
-                                        <span class="post-date">March 12, 2018</span>
-                                    </li>
-                                    <li>
-                                        <a href="blog-full-width-post.html">Full Width Media Post</a>
-                                        <span class="post-date">September 25, 2018</span>
-                                    </li>
-                                    <li>
-                                        <a href="blog-slideshow-post.html">Amazing Slideshow post</a>
-                                        <span class="post-date">November 21, 2018</span>
-                                    </li>
+                                    <li><a href="#">Vertext Management</a></li>
+                                    <li><a href="#">Continues Implamanted</a></li>
+                                    <li> <a href="#">Employee Engagement</a> </li>
+                                    <li> <a href="#">Change Management</a> </li>
+                                    <li> <a href="#">View more...</a> </li>
                                 </ul>
                             </section>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-2">
                             <section class="widget">
                                 <div class="widget-heading">
-                                    <h4>Recent Works</h4>
+                                    <h4>Product</h4>
                                 </div>
-                                <ul class="portfolio-grid">
-                                    <li>
-                                        <a href="portfolio-single.html" class="grid-img-wrap">
-                                            <img src="img/thumbs/project-1.jpg" />
-                                            <span class="tooltip">Phasellus enim libero<span class="arrow"></span></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio-single.html" class="grid-img-wrap">
-                                            <img src="img/thumbs/project-2.jpg" />
-                                            <span class="tooltip">Phasellus enim libero<span class="arrow"></span></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio-single.html" class="grid-img-wrap">
-                                            <img src="img/thumbs/project-3.jpg" />
-                                            <span class="tooltip">Phasellus enim<span class="arrow"></span></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio-single.html" class="grid-img-wrap">
-                                            <img src="img/thumbs/project-7.jpg" />
-                                            <span class="tooltip">Nulla Congue<span class="arrow"></span></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio-single.html" class="grid-img-wrap">
-                                            <img src="img/thumbs/project-8.png" />
-                                            <span class="tooltip">Phasellus enim libero<span class="arrow"></span></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio-single.html" class="grid-img-wrap">
-                                            <img src="img/thumbs/project-9.png" />
-                                            <span class="tooltip">Phasellus libero<span class="arrow"></span></span>
-                                        </a>
-                                    </li>
+                                <ul>
+                                    <li><a href="#">Why Vertex</a></li>
+                                    <li><a href="#">Sign up Free</a></li>
+                                    <li> <a href="#">Get a Demo</a> </li>
+                                    <li> <a href="#">Features</a> </li>
+                                    <li> <a href="#">Pricing</a> </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-sm-2">
+                            <section class="widget">
+                                <div class="widget-heading">
+                                    <h4>Customers</h4>
+                                </div>
+                                <ul>
+                                    <li><a href="#">Getting Started Guide</a></li>
+                                    <li><a href="#">Customer Success</a></li>
+                                    <li> <a href="#">Wall of Love</a> </li>
+                                    <li> <a href="#">Help Center</a> </li>
+                                    <li> <a href="#">Partners</a> </li>
                                 </ul>
                             </section>
                         </div>
                     </div>
                 </div>
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <nav class="footer-menu">
+                                    <ul class="menu float-left">
+                                        <li><a href="#"><i class="icon-chat-1 fs-17 primary-color mr-2"></i> Chat </a></li>
+                                        <li><a href="#"><i class="icon-camera-landscape fs-17 primary-color mr-2"></i> English </a></li>
+                                        <li><a href="#"><i class="icon-headphone fs-17 primary-color mr-2"></i> +45 3212 5680 </a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2 center">
+                                <img src="img/logo.png" class="center" width="80">
+                            </div>
+                            <div class="col-md-5">
+                                <nav class="footer-menu std-menu">
+                                    <ul class="menu">
+                                        <li><a href="#">© Vertex 2018</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Privacy</a></li>
+                                        <li><a href="#">Terms</a></li>
+                                        <li><a href="#">Securty</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </footer>
 
-            <div class="copyright">
-                <div class="container">
-                    <p>© Copyright 2018 by Vertex. All Rights Reserved.</p>
-                    <nav class="footer-menu std-menu">
-                        <ul class="menu">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Buy Now</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
         </div>
         <!--End Footer-Wrap-->
     </div>
@@ -951,6 +905,7 @@
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/imagesloaded.js"></script>
     <script src="js/view.min.js?auto"></script>
+    <script src="plugins/aos/aos.js"></script>
 
     <script src="js/theme-core.js"></script>
     <script src="js/theme.js"></script>

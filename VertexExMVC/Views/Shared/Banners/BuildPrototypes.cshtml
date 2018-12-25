@@ -1,0 +1,42 @@
+﻿@using ExpressMVC.Models.Shortcodes
+@using ExpressMVC.UI
+
+@Html.ExpressSection(new SectionModel() { HasContainerAndRow = true, Height = SectionHeight.Height2, ClassName = "pix-business-5" },
+    @<text>
+
+        <div class="col-md-12 text-center">
+            <br /><br /><br /><br /><br />
+
+            <h1 class="text-19 font-weight-bold mb-3 text-white">WE ARE EXPRESS</h1>
+            <h4 class="text-white text-5 mb-5">
+                Express uses valid and clean code so that you make sure that <br />
+                Google and other search engines will love it.
+            </h4>
+
+            @Html.ExpressSpace()
+
+            <a href="#" class="btn btn-outline-primary btn-rounded mr-2 shadow-5x"><i class="fa fa-play-circle-o"></i> Wathch Video</a>
+
+            <a href="#" class="btn btn-primary btn-rounded shadow-5x"><i class="fa fa-diamond"></i> Get in touch</a>
+
+            @Html.ExpressSpace()
+
+            <p>Some of the world's best design teams already inspect designs in Express.</p>
+
+            @Html.ExpressSpace()
+        </div>
+
+        <div class="col-md-10 offset-md-1">
+            @RenderClients()
+        </div>
+    </text>)
+
+@helper RenderClients()
+{
+    @Html.ExpressCarousel(new CarouselModel() { DisplayCount = 5, Dots = false, Margin = 75, AutoPlay = true },
+    @<text> <img alt="" class="img-fluid" src="~/Content/img/clients/16.png"> </text>,
+    @<text> <img alt="" class="img-fluid" src="~/Content/img/clients/5.png"> </text>,
+    @<text> <img alt="" class="img-fluid" src="~/Content/img/clients/6.png"> </text>,
+    @<text> <img alt="" class="img-fluid" src="~/Content/img/clients/10.png"> </text>,
+    @<text> <img alt="" class="img-fluid" src="~/Content/img/clients/11.png"> </text>)
+}

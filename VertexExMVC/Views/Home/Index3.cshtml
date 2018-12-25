@@ -1,0 +1,449 @@
+﻿@using ExpressMVC.SampleData
+@using ExpressMVC.UI
+@using ExpressMVC.Models.Shortcodes
+@using ExpressMVC.Models.Common
+
+
+@Html.ExpressMenu(new HeaderModel()
+{
+    UIProps = { Transparency = HeaderTransparency.Transparent }
+})
+
+@Html.ExpressRevolutionSlider("demo6")
+
+
+@Html.ExpressSection(new SectionModel() { HasContainerAndRow = true, Height = SectionHeight.Height4 },
+    @<text>
+        <div class="col-md-4">
+            @Html.ExpressIconBox(
+                new IconBoxModel()
+                {
+                    Title = "Amazing Interface",
+                    Content = "Stet solum ceteros ad pri, amet alia scripta qui ea. Cum an aeterno efficiantur. Sit nihil detracto et, ut tota aeterno suscipiantur.",
+                    Icon = Icons.LinearIcon.Diamond,
+                    UIProps = { Style = IconBoxStyle.Style6 }
+                })
+        </div>
+
+        <div class="col-md-4">
+            @Html.ExpressIconBox(
+                new IconBoxModel()
+                {
+                    Title = "High Rated Team",
+                    Content = "Stet solum ceteros ad pri, amet alia scripta qui ea. Cum an aeterno efficiantur. Sit nihil detracto et, ut tota aeterno suscipiantur pri.",
+                    Icon = Icons.LinearIcon.Heart,
+                    UIProps = { Style = IconBoxStyle.Style6 }
+                })
+        </div>
+
+        <div class="col-md-4">
+            @Html.ExpressIconBox(
+                new IconBoxModel()
+                {
+                    Title = "Fully Customizible",
+                    Content = "Class aptent taciti sociosqu adlitora torquent per conubia nostra, per ulla nunc dui, your project is tristique semper.",
+                    Icon = Icons.FontAwesome.Server,
+                    UIProps = { Style = IconBoxStyle.Style6 }
+                })
+        </div>
+
+    </text>)
+
+
+
+@Html.ExpressSection(new SectionModel() { HasContainerAndRow = true, ClassName = "bg-light-5", Height = SectionHeight.Height4 },
+    @<text>
+        <div class="col-md-6">
+            <div class="clearfix text-center pt-4">
+                <h2 class="primary-color text-8 font-weight-semibold w-100 position-absolute text-primary pt-9">50,000+ Clients <br> from all over the world </h2>
+                <img class="w-100" src="/content/img/mix/clients-map.png">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+
+            <h2 class="text-8 font-weight-bold mb-3">Creative Design</h2>
+
+            <p>
+                onsul corpora interesset ei cum. Audiam tacimates cotidieque no has,
+                ius iisque neglegentur eu. Est quas habemus imperdiet an, duis dictas perfecto sea ei.
+                Nominati expetenda adversarium in ius, suscipit scaevola eu mea, has ei porro pertinacia.
+                Quo libris oblique at, dolorum nominavi et vix.
+            </p>
+
+            @Html.ExpressSpace()
+
+            @Html.ExpressProgressBar(new ProgressBarModel() { Value = 45, Label = new TextElement("Javascript"), UIProps = { IsLabelOutside = true } })
+            @Html.ExpressProgressBar(new ProgressBarModel() { Value = 65, Label = new TextElement("Photoshop"), UIProps = { IsLabelOutside = true } })
+            @Html.ExpressProgressBar(new ProgressBarModel() { Value = 85, Label = new TextElement("Bootstrap"), UIProps = { IsLabelOutside = true } })
+        </div>
+    </text>)
+
+
+@Html.ExpressSection(new SectionModel() { HasContainerAndRow = true, ClassName = "gr-bg-1", Height = SectionHeight.Height5 },
+    @<text>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(
+                 new CounterModel()
+                 {
+                     ClassName = "customCounter",
+                     Label = "Happy Clients",
+                     Append = "+",
+                     To = 25000,
+                     Icon = Icons.FontAwesome.User
+                 })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(
+                new CounterModel()
+                {
+                    ClassName = "customCounter",
+                    Label = "Years in Business",
+                    To = 15,
+                    Icon = "lnr lnr-apartment"
+                })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(
+                new CounterModel()
+                {
+                    ClassName = "customCounter",
+                    Label = "Answered Tickets",
+                    To = 352,
+                    Icon = "sl-support sl"
+                })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(
+                new CounterModel()
+                {
+                    ClassName = "customCounter",
+                    Label = "Development Hours",
+                    To = 178,
+                    Icon = "sl-clock sl"
+                })
+        </div>
+    </text>)
+
+
+
+
+
+
+
+
+
+@Html.ExpressSection(new SectionModel() { IsParallax = true, Height = SectionHeight.Height4, Src = "/content/img/mix/woman-bg.png" },
+    @<text>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 offset-md-4">
+                     
+                    @Html.ExpressSectionTitle("Ultimate Website Builder")
+                    <p class="lead">
+                        Responsive & optimized for mobile devices.
+                    </p>
+
+                    @Html.ExpressSpace()
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+
+                <div class="col-md-4">
+                    @Html.ExpressIconBox(
+                        new IconBoxModel()
+                        {
+                            Title = "Extensive Options",
+                            Content = "Vestibule corvallis pulvinar tellus eget ultricies. Sed sollicitudin, sem vitae elementum euismod.",
+                            Icon = Icons.LinearIcon.CoffeeCup,
+                            UIProps = { Style = IconBoxStyle.Style1 }
+                        })
+
+                    @Html.ExpressSpace()
+                </div>
+
+                <div class="col-md-4">
+                    @Html.ExpressIconBox(
+                        new IconBoxModel()
+                        {
+                            Title = "Unique Features",
+                            Content = "Vestibule corvallis pulvinar tellus eget ultricies. Sed sollicitudin, sem vitae elementum euismod.",
+                            Icon = Icons.FontAwesome.Eye,
+                            UIProps = { Style = IconBoxStyle.Style1 }
+                        })
+
+                    @Html.ExpressSpace()
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+
+                <div class="col-md-4">
+                    @Html.ExpressIconBox(
+                        new IconBoxModel()
+                        {
+                            Title = "Stunning Design",
+                            Content = "Vestibule corvallis pulvinar tellus eget ultricies. Sed sollicitudin, sem vitae elementum euismod.",
+                            Icon = Icons.LinearIcon.Heart,
+                            UIProps = { Style = IconBoxStyle.Style1 }
+                        })
+
+                    @Html.ExpressSpace()
+                </div>
+
+                <div class="col-md-4">
+                    @Html.ExpressIconBox(
+                        new IconBoxModel()
+                        {
+                            Title = "Unique Features",
+                            Content = "Vestibule corvallis pulvinar tellus eget ultricies. Sed sollicitudin, sem vitae elementum euismod.",
+                            Icon = Icons.FontAwesome.Rocket,
+                            UIProps = { Style = IconBoxStyle.Style1 }
+                        })
+
+                    @Html.ExpressSpace()
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+
+                <div class="col-md-4">
+                    @Html.ExpressIconBox(
+                        new IconBoxModel()
+                        {
+                            Title = "Super Faster",
+                            Content = "Vestibule corvallis pulvinar tellus eget ultricies. Sed sollicitudin, sem vitae elementum euismod.",
+                            Icon = Icons.LinearIcon.CoffeeCup,
+                            UIProps = { Style = IconBoxStyle.Style1 }
+                        })
+                </div>
+
+                <div class="col-md-4">
+                    @Html.ExpressIconBox(
+                        new IconBoxModel()
+                        {
+                            Title = "Fully Responsive",
+                            Content = "Vestibule corvallis pulvinar tellus eget ultricies. Sed sollicitudin, sem vitae elementum euismod.",
+                            Icon = Icons.FontAwesome.Laptop,
+                            UIProps = { Style = IconBoxStyle.Style1 }
+                        })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-4">
+
+                    @Html.ExpressSpace()
+
+                    <a href="#" class="btn btn-dark btn-rounded mr-2"><i class="fa fa-check-circle"></i> Join Us Today</a>
+
+                    <a href="#" class="btn btn-primary btn-rounded"><i class="fa fa-diamond"></i> Get in touch</a>
+                </div>
+            </div>
+        </div>
+    </text>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Html.ExpressSection(new SectionModel() { Height = SectionHeight.Height4 },
+    @<text>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4>It’s time to find your project</h4>
+
+                    @Html.ExpressSectionTitle("Choose a plan")
+
+                    @Html.ExpressSectionSubTitle("Express uses valid and clean code so that you make sure <br /> that Google and other search engines will love it.")
+
+                    @Html.ExpressSpace()
+                </div>
+            </div>
+        </div>
+
+        @Html.ExpressWidget(name: "PricingTable")
+    </text>)
+
+@Html.ExpressSection(new SectionModel() { HasContainerAndRow = true, Height = SectionHeight.Height4, Src = "/Content/img/mix/custom-bg-1.jpg" },
+    @<text>
+        <div class="col-md-12  text-white text-center">
+            <h5 class="text-white">ARE YOU READY?</h5>
+            @Html.ExpressSectionTitle("Get Started Now", TextColor.White)
+
+            @Html.ExpressSectionSubTitle("No matter how complex your project is, Express for teams makes it easy to  <br /> share your entire development stack with anyone, anywhere.", TextColor.White)
+        </div>
+
+        <div class="col-md-12 text-center">
+            <div class="clearfix mt-40">
+                <a href="#" class="btn btn-primary btn-rounded"><i class="fa fa-diamond"></i> Get in touch</a>
+            </div>
+        </div>
+    </text>)
+
+
+@Html.ExpressSection(new SectionModel() { Height = SectionHeight.Height4 },
+    @<text>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 class="fs-18 fw-5 pt-50 mb-0">It’s time to find your project</h4>
+
+                    @Html.ExpressSectionTitle("Latest Projects")
+
+                    @Html.ExpressSectionSubTitle("Express uses valid and clean code so that you make sure that Google and other <br /> search engines will love it.")
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @{
+                        var portfolioModel = PortfolioData.GridData;
+                        portfolioModel.UIProps.ColumnCount = 3;
+                        portfolioModel.UIProps.ShowFilter = false;
+                        portfolioModel.UIProps.ShowPaginations = false;
+                        portfolioModel.PageSize = 6;
+                    }
+                    @Html.ExpressPortfolio(portfolioModel)
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    @Html.ExpressSpace(Size.Large)
+
+                    <a class="btn btn-dark btn-rounded mr-2" href="#"><span class="text"><i class="fa fa-eye ml-0"></i> View Our Works</span></a>
+                    <button type="button" class="btn btn-outline-primary btn-rounded"><i class="fa fa-eye ml-0"></i> See Our Features</button>
+                </div>
+            </div>
+        </div>
+    </text>)
+
+
+@Html.ExpressCallToAction(new CallToActionModel()
+{
+    UIProps = { BGColor = ThemeColor.Dark, Height = CallToActionHeight.Height3 },
+    Text = "This is your chance to jumpstart your business"
+})
+
+
+@Html.ExpressSection(new SectionModel() { Height = SectionHeight.Height4 },
+    @<text>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 class="fs-18 fw-5 pt-50 mb-0">It’s time to find your project</h4>
+
+                    @Html.ExpressSectionTitle("Happy Teams")
+
+                    @Html.ExpressSectionSubTitle("Fierent mediocrem suavitate eam id, cu odio consequat eum Graeco  <br /> scripserit in eos, putent posidonium mei an, sed ut labitur")
+
+                    @Html.ExpressSpace()
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.ExpressTeamElement(
+                        new TeamElementModel()
+                        {
+                            Name = "Kathy Foster",
+                            Position = "Graphic Designer",
+                            Src = "/Content/img/team/team5.jpg",
+                            SocialLinks = new List<SocialIconModel>() { new SocialIconModel() { Name = "Facebook", Icon = Icons.FontAwesome.FaceBook } }
+                        })
+                </div>
+
+                <div class="col-md-3">
+                    @Html.ExpressTeamElement(
+                        new TeamElementModel()
+                        {
+                            Name = "William Richardson",
+                            Position = "Web Developer",
+                            Src = "/Content/img/team/team02.jpg"
+                        })
+                </div>
+
+                <div class="col-md-3">
+                    @Html.ExpressTeamElement(
+                        new TeamElementModel()
+                        {
+                            Name = "Barbara Patterson",
+                            Position = "Senior Designer",
+                            Src = "/Content/img/team/team04.jpg"
+                        })
+                </div>
+
+                <div class="col-md-3">
+                    @Html.ExpressTeamElement(
+                        new TeamElementModel()
+                        {
+                            Name = "William Richardson",
+                            Position = "Web Developer",
+                            Src = "/Content/img/team/team03.jpg"
+                        })
+                </div>
+            </div>
+
+        </div>
+    </text>)
+
+
+
+<section class="pix-business-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+                <h4 class="fs-18 fw-5 pt-20 mb-0">It’s time to find your project</h4>
+
+                @Html.ExpressSectionTitle("Online Support")
+
+                @Html.ExpressSectionSubTitle("No matter how complex your project is, Express for teams makes it easy to  <br /> share your entire development stack with anyone, anywhere.")
+            </div>
+
+            <div class="col-md-12">
+
+                <div class="clearfix text-center mt-20">
+                    <a href="#" class="btn btn-rounded btn-dark mr-2"><i class="fa fa-check-circle"></i> Join Us Today</a>
+                    <a href="#" class="btn btn-primary btn-rounded"><i class="fa fa-diamond"></i> Get in touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@Html.ExpressFooter()

@@ -1,0 +1,222 @@
+﻿@model ExpressMVC.Models.Shortcodes.SectionModel
+@using ExpressMVC.UI
+
+@{
+    string sectionHeightClass = string.Empty;
+    switch (Model.Height)
+    {
+        case SectionHeight.Height1:
+            sectionHeightClass = "section-height-1";
+            break;
+        case SectionHeight.Height2:
+            sectionHeightClass = "section-height-2";
+            break;
+        case SectionHeight.Height3:
+            sectionHeightClass = "section-height-3";
+            break;
+        case SectionHeight.Height4:
+            sectionHeightClass = "section-height-4";
+            break;
+        case SectionHeight.Height5:
+            sectionHeightClass = "section-height-5";
+            break;
+        case SectionHeight.Height6:
+            sectionHeightClass = "section-height-6";
+            break;
+        default:
+            break;
+    }
+
+    string bgLightClass = string.Empty;
+    switch (Model.BGLight)
+    {
+        case BGLight.Default:
+            bgLightClass = string.Empty;
+            break;
+        case BGLight.Light1:
+            bgLightClass = "bg-light-1";
+            break;
+        case BGLight.Light2:
+            bgLightClass = "bg-light-2";
+            break;
+        case BGLight.Light3:
+            bgLightClass = "bg-light-3";
+            break;
+        case BGLight.Light4:
+            bgLightClass = "bg-light-4";
+            break;
+        case BGLight.Light5:
+            bgLightClass = "bg-light-5";
+            break;
+        default:
+            break;
+    }
+
+    string bgColor = string.Empty;
+    switch (Model.BGColor)
+    {
+        case ThemeColor.Default:
+            bgColor = string.Empty;
+            break;
+        case ThemeColor.Primary:
+            bgColor = (Model.IsOverlaySection || Model.IsParallax) ? "overlay-color-primary" : "bg-primary";
+            break;
+        case ThemeColor.Secondary:
+            bgColor = (Model.IsOverlaySection || Model.IsParallax) ? "overlay-color-secondary" : "bg-secondary";
+            break;
+        case ThemeColor.Tertiary:
+            bgColor = (Model.IsOverlaySection || Model.IsParallax) ? "overlay-color-tertiary" : "bg-tertiary";
+            break;
+        case ThemeColor.Quaternary:
+            bgColor = (Model.IsOverlaySection || Model.IsParallax) ? "overlay-color-quaternary" : "bg-primary-2";
+            break;
+        case ThemeColor.Dark:
+            bgColor = (Model.IsOverlaySection || Model.IsParallax) ? "overlay-color-dark" : "bg-dark-2";
+            break;
+        default:
+            break;
+    }
+
+    string bgDarkClass = string.Empty;
+    switch (Model.BGDark)
+    {
+        case BGDark.Default:
+            bgDarkClass = string.Empty;
+            break;
+        case BGDark.Dark1:
+            bgDarkClass = "bg-dark-1";
+            break;
+        case BGDark.Dark2:
+            bgDarkClass = "bg-dark-2";
+            break;
+        case BGDark.Dark3:
+            bgDarkClass = "bg-dark-3";
+            break;
+        case BGDark.Dark4:
+            bgDarkClass = "bg-dark-4";
+            break;
+        case BGDark.Dark5:
+            bgDarkClass = "bg-dark-5";
+            break;
+        default:
+            break;
+    }
+
+    if (!String.IsNullOrEmpty(bgDarkClass))
+    {
+        bgLightClass = string.Empty;
+    }
+    if (!String.IsNullOrEmpty(bgColor))
+    {
+        bgLightClass = string.Empty;
+        bgDarkClass = string.Empty;
+    }
+
+    string borderTopClass = string.Empty;
+    if (Model.HasBorderTop)
+    {
+        borderTopClass = "section-border-top";
+        Model.ClassName += " " + borderTopClass;
+    }
+
+    string borderBottomClass = string.Empty;
+    if (Model.HasBorderBottom)
+    {
+        borderBottomClass = "section-border-bottom";
+        Model.ClassName += " " + borderBottomClass;
+    }
+}
+
+
+@if (String.IsNullOrEmpty(Model.Src))
+{
+    <section class="section @Model.ClassName @sectionHeightClass @bgLightClass @bgDarkClass @bgColor">
+        @if (Model.HasContainerAndRow)
+        {
+            <div class="container">
+                <div class="row">
+                    @Html.Raw(Model.InnerHtmlString)
+                </div>
+            </div>
+        }
+        else
+        {
+            @Html.Raw(Model.InnerHtmlString)
+        }
+    </section>
+}
+else
+{
+    if (Model.IsParallax)
+    {
+        <section class="section parallax @Model.ClassName @sectionHeightClass @bgLightClass @bgDarkClass @bgColor"
+                  data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '240%'}" data-image-src="@Model.Src">
+            @if (Model.HasContainerAndRow)
+            {
+                <div class="container">
+                    <div class="row">
+                        @Html.Raw(Model.InnerHtmlString)
+                    </div>
+                </div>
+            }
+            else
+            {
+                @Html.Raw(Model.InnerHtmlString)
+            }
+        </section>
+    }
+    else if (Model.IsVideoSection)
+    {
+        <section class="section section-video overlay overlay-show overlay-op-5 @Model.ClassName @sectionHeightClass @bgColor"
+                  data-video-path="@Model.Src" data-plugin-video-background data-plugin-options="{'posterType': 'jpg', 'position': '50% 50%', 'overlay': true}">
+            @if (Model.HasContainerAndRow)
+            {
+                <div class="container">
+                    <div class="row">
+                        @Html.Raw(Model.InnerHtmlString)
+                    </div>
+                </div>
+            }
+            else
+            {
+                @Html.Raw(Model.InnerHtmlString)
+            }
+        </section>
+    }
+    else if (Model.IsOverlaySection)
+    {
+        <section class="section section-background overlay overlay-show overlay-op-8 @Model.ClassName @sectionHeightClass @bgLightClass @bgDarkClass @bgColor"
+                 data-plugin-image-background data-plugin-options="{'imageUrl': '@Model.Src'}">
+            @if (Model.HasContainerAndRow)
+            {
+                <div class="container">
+                    <div class="row">
+                        @Html.Raw(Model.InnerHtmlString)
+                    </div>
+                </div>
+            }
+            else
+            {
+                @Html.Raw(Model.InnerHtmlString)
+            }
+        </section>
+    }
+    else
+    {
+        <section class="section section-background @Model.ClassName @sectionHeightClass @bgLightClass @bgDarkClass @bgColor"
+                 data-plugin-image-background data-plugin-options="{'imageUrl': '@Model.Src'}">
+            @if (Model.HasContainerAndRow)
+            {
+                <div class="container">
+                    <div class="row">
+                        @Html.Raw(Model.InnerHtmlString)
+                    </div>
+                </div>
+            }
+            else
+            {
+                @Html.Raw(Model.InnerHtmlString)
+            }
+        </section>
+    }
+}

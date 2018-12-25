@@ -1,0 +1,73 @@
+﻿@model ExpressMVC.Models.Shortcodes.HeadingModel
+@using ExpressMVC.UI
+@using ExpressMVC.Models.Shortcodes
+
+@{ 
+    string aligmentClass = string.Empty;
+    switch (Model.Aligment)
+    {
+        case Alignment.Left:
+            aligmentClass = string.Empty;
+            break;
+        case Alignment.Right:
+            aligmentClass = "heading-right";
+            break;
+        case Alignment.Center:
+            aligmentClass = "heading-center";
+            break;
+        default:
+            break;
+    }
+
+    if (!string.IsNullOrEmpty(aligmentClass) && Model.Style != HeadingStyle.BorderBottom)
+    {
+        Model.ClassName += " " + aligmentClass;
+    }
+}
+
+
+@if (Model.Style == HeadingStyle.None)
+{
+    @Html.Raw(getHeading(Model))
+}
+else if (Model.Style == HeadingStyle.BorderBottom)
+{
+    <div class="heading--border-botton @aligmentClass">
+        @Html.Raw(getHeading(Model))
+    </div>
+} 
+else if (Model.Style == HeadingStyle.DoubleLineAfterText)
+{
+    <div class="heading--double-line-after-text">
+        @Html.Raw(getHeading(Model))
+    </div>
+}
+else if (Model.Style == HeadingStyle.LineAfterText)
+{
+    <div class="heading--line-after-text">
+        @Html.Raw(getHeading(Model))
+    </div>
+} 
+else if (Model.Style == HeadingStyle.NarrowLine)
+{
+    <div class="heading--narrow-line">
+        @Html.Raw(getHeading(Model)) 
+    </div>
+}
+
+
+@functions {
+    string getHeading(HeadingModel model)
+    {
+        string beginTag = string.Format("<{2} class=\"{0} {1}\">", model.ClassName, Model.Text.GetClassName(), model.HTag.ToString());
+        string endTag = string.Format("</{0}>", model.HTag.ToString());
+
+        string s = string.Empty;
+        if (Model.Style == HeadingStyle.NarrowLine)
+        {
+            s = "<div class=\"narrow-line-inner\"></div>";
+        }
+
+        return beginTag + "<span>" + model.Text.ToString() + "</span>" + s + endTag;
+    }
+}

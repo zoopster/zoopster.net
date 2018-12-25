@@ -1,0 +1,35 @@
+﻿@using ExpressMVC.Models.Common
+
+<aside class="sidebar">
+
+    <div class="sidebar-widget">
+        <div class="sidebar-heading">
+            <h4 class="title">Search</h4>
+        </div>
+        @Html.ExpressWidget("Sidebar.SearchForm")
+    </div>
+
+    <div class="sidebar-widget">
+        <div class="sidebar-heading">
+            <h4 class="title">News</h4>
+        </div>
+        @Html.ExpressWidget("Sidebar.PopularBlogItems")
+    </div>
+
+    <div class="sidebar-widget">
+        <div class="sidebar-heading">
+            <h4 class="title">TAGS</h4>
+        </div>
+        @Html.ExpressWidget("Sidebar.Tags")
+    </div>
+
+    <div class="sidebar-widget">
+        <div class="sidebar-heading">
+            <h4 class="title">FROM INSTAGRAM</h4>
+        </div>
+        @Html.ExpressWidget("Sidebar.Instagram")
+    </div>
+
+    @Html.ExpressWidget("Sidebar.Subscribe")
+
+</aside>

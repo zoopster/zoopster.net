@@ -1,0 +1,42 @@
+﻿@model ExpressMVC.Models.Shortcodes.ProcessStepItemModel
+
+@if (String.IsNullOrEmpty(Model.Icon))
+{
+    <div class="">
+        <div class="@Model.State.ToString().ToLower() process-step-step">
+            <div class="text-center process-step-stepnum">@Model.Title</div>
+            <div class="progress"><div class="progress-bar"></div></div>
+            <a href="#" class="process-step-dot"></a>
+
+            @if (!string.IsNullOrEmpty(Model.Content))
+            {
+                <div class="process-step-info text-center">
+                    @Html.Raw(Model.Content)
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="process-step v2">
+
+        <div class="@Model.State.ToString().ToLower() process-step-step">
+            <div class="process-step-icon clearfix">
+                <i class="@Model.Icon fa-3x primary-color"></i>
+            </div>
+            <div class="process-step-content">
+                <div class="text-center process-step-stepnum">@Model.Title</div>
+                <div class="progress"><div class="progress-bar"></div></div>
+                <a href="#" class="process-step-dot"></a>
+
+                @if (!string.IsNullOrEmpty(Model.Content))
+                {
+                    <div class="process-step-info text-center">
+                        @Html.Raw(Model.Content)
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

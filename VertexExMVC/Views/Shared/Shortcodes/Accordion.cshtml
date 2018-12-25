@@ -1,0 +1,79 @@
+﻿@model ExpressMVC.Models.Shortcodes.AccordionModel
+@using ExpressMVC.Models.Shortcodes
+@using ExpressMVC.UI
+
+@{
+    string accordionId = String.Format("Id_{0}", Guid.NewGuid().ToString());
+
+    string styleClass = string.Empty;
+    switch (Model.UIProps.Style)
+    {
+        case AccordionStyle.Default:
+            styleClass = "accordion-primary accordion-default";
+            break;
+        case AccordionStyle.Minimal:
+            styleClass = "accordion-minimal";
+            break;
+        default:
+            break;
+    }
+
+    string sizeClass = string.Empty;
+    switch (Model.UIProps.Size)
+    {
+        case ExpressMVC.UI.Size.Small:
+            sizeClass = "accordion-sm";
+            break;
+        case ExpressMVC.UI.Size.Large:
+            sizeClass = "accordion-lg";
+            break;
+        default:
+            break;
+    }
+
+
+    string toggleClass = string.Empty;
+    if (Model.IsToggleMode)
+    {
+        toggleClass = "accordion-toggle";
+    }
+}
+
+<div id="@accordionId" class="accordion @toggleClass @sizeClass @styleClass" role="tablist">
+    @for (int i = 0; i < Model.Items.Count; i++)
+    {
+        var item = Model.Items[i];
+        string headerId = String.Format("CardHeader_{0}", accordionId);
+        string itemId = String.Format("Item_{0}{1}", accordionId, i);
+        string showClass = item.IsExpanded ? "show" : string.Empty;
+        string collapseClass = !item.IsExpanded ? "collapsed" : string.Empty;
+
+        <div class="card">
+            <div class="card-header accordion-header" role="tab" id="@headerId">
+                <h5 class="mb-0">
+                    <a href="#" class="@collapseClass" data-toggle="collapse" data-target="#@itemId" aria-expanded="false" aria-controls="@itemId">@item.Title</a>
+                </h5>
+            </div>
+            @if (!Model.IsToggleMode)
+            {
+                <div id="@itemId" class="collapse @showClass" role="tabpanel" aria-labelledby="@headerId" data-parent="#@accordionId">
+                    <div class="card-body">
+                        <p class="mb-0">
+                            @Html.Raw(item.Content)
+                        </p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div id="@itemId" class="collapse @showClass" role="tabpanel" aria-labelledby="@headerId">
+                    <div class="card-body">
+                        <p class="mb-0">
+                            @Html.Raw(item.Content)
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

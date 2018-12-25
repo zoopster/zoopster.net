@@ -1,0 +1,22 @@
+﻿@using ExpressMVC.SampleData
+
+@{
+    var shortCodeMenu = new Menu().GetMenuList().Find(s => s.Text == "Shortcodes");
+
+    var actionName = string.Empty;
+    var routeValues = HttpContext.Current.Request.RequestContext.RouteData.Values;
+    if (routeValues != null)
+    {
+        if (routeValues.ContainsKey("action"))
+        {
+            actionName = routeValues["action"].ToString();
+        }
+    }
+}
+
+<div class="express-list list-group">
+    @foreach (var item in shortCodeMenu.Childs.Where(s => String.IsNullOrEmpty(s.MegaMenuTitle)))
+    {
+        <a href="@item.Url" class="list-group-item list-group-item-action @item.IsActive"><i class="fa fa-arrow-right"></i> @item.Text</a>
+    }
+</div>

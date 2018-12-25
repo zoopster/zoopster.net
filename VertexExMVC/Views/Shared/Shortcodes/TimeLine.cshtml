@@ -1,0 +1,79 @@
+﻿@model ExpressMVC.Models.Shortcodes.TimeLineModel
+@using ExpressMVC.Models.Shortcodes
+
+@if (Model.TimeLineType == TimeLineTypes.Type1)
+{
+    <div class="custom-timeline">
+        @foreach (var item in Model.TimeLines)
+        {
+            <div class="custom-timeline-box">
+                <span class="date fw-6 primary-color">@item.Date.Year</span>
+                <h3 class="timeline-title">@item.Title</h3>
+                <p class="timeline-detail">
+                    @item.Content
+                </p>
+            </div>
+        }
+    </div>
+}
+
+
+@if (Model.TimeLineType == TimeLineTypes.Type2)
+{
+    <div class="timeline v2">
+        @for (int i = 0; i < Model.TimeLines.Count; i++)
+        {
+            var item = Model.TimeLines[i];
+            if (i % 2 == 0)
+            {
+                <div class="row timeline-movement">
+                    <div class="col-sm-12 text-center">
+                        <span class="date">@item.Date.ToShortTimeString()</span>
+                    </div>
+                    <div class="col-sm-6 timeline-item">
+                        <div class="row">
+                            <div class="col-sm-11 text-right">
+                                <p class="title">@item.Title</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 timeline-item">
+                        <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-11">
+                                <div class="timeline-panel">
+                                    <p class="details">
+                                        @item.Content
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row timeline-movement">
+                    <div class="col-sm-12 text-center">
+                        <span class="date">@item.Date.ToShortTimeString()</span>
+                    </div>
+                    <div class="col-sm-6 timeline-item">
+                        <div class="row">
+                            <div class="col-sm-11">
+                                <div class="timeline-panel left-part">
+                                    <p class="details">@item.Content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 timeline-item right-title">
+                        <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-11"><p class="title">@item.Title</p></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+}

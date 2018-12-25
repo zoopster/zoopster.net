@@ -1,0 +1,99 @@
+﻿@using ExpressMVC.Models.Shortcodes
+@using ExpressMVC.Models.Common
+@using ExpressMVC.SampleData
+@using ExpressMVC.UI
+
+@Html.ExpressMenu()
+
+@Html.ExpressPageHeader(title: "Accordions")
+
+@Html.ExpressFooter()
+
+@{
+    var samplaModel = AccordionData.GetAccordionModel;
+}
+
+<section class="section">
+    <div class="container">
+        <div class="row"> 
+            <div class="col-md-4 col-lg-3 order-1">
+                @Html.ExpressSidebar(name: "ShortcodeMenu")
+            </div>
+
+            <div class="col-md-8 col-lg-9 order-2">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <h4 class="mb-4">Accordion - Default</h4>
+                        @Html.ExpressAccordion(samplaModel)
+                    </div>
+
+                    <div class="col-md-12">
+                        <h4 class="mb-4 mt-9">Accordion - Minimal</h4>
+
+                        @{
+                            samplaModel.UIProps.Style = AccordionStyle.Minimal;
+                        }
+                        @Html.ExpressAccordion(samplaModel)
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <h4 class="mb-4 mt-9">Toggle - Default</h4>
+
+                        @{
+                            samplaModel.UIProps.Style = AccordionStyle.Default;
+                            samplaModel.IsToggleMode = true;
+                        }
+                        @Html.ExpressAccordion(samplaModel)
+                    </div>
+
+                    <div class="col-md-12">
+                        <h4 class="mb-4 mt-9">Toggle - Minimal</h4>
+
+                        @{
+                            samplaModel.UIProps.Style = AccordionStyle.Minimal;
+                            samplaModel.IsToggleMode = true;
+                        }
+                        @Html.ExpressAccordion(samplaModel)
+                    </div>
+                </div>
+
+
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <h4 class="mb-4 mt-9">Sizes</h4>
+                    </div>
+
+                    <div class="col-md-4">
+                        @{
+                            samplaModel.IsToggleMode = false;
+                            samplaModel.UIProps.Style = AccordionStyle.Default;
+                            samplaModel.UIProps.Size = Size.Small;
+                        }
+                        @Html.ExpressAccordion(samplaModel)
+                    </div>
+                    <div class="col-md-4">
+                        @{
+                            samplaModel.UIProps.Style = AccordionStyle.Default;
+                            samplaModel.UIProps.Size = Size.Default;
+                        }
+                        @Html.ExpressAccordion(samplaModel)
+                    </div>
+                    <div class="col-md-4">
+                        @{
+                            samplaModel.UIProps.Style = AccordionStyle.Default;
+                            samplaModel.UIProps.Size = Size.Large;
+                        }
+                        @Html.ExpressAccordion(samplaModel)
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</section>

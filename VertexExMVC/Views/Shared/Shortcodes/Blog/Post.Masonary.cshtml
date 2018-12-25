@@ -1,0 +1,151 @@
+﻿@model ExpressMVC.Models.Blog.BlogListModel
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    var blogPosts = Model.BlogPosts.ToPagedList(Model.PageNumber ?? 1, Model.PageSize);
+    string columnClass = Model.UIProps.GetColumnClass();
+}
+
+
+
+<div class="row masonry-loader masonry-loader-showing portfolio-list portfolio-list-style-2"
+     data-plugin-masonry data-plugin-options="{'itemSelector': '.isotope-item'}">
+
+    @foreach (var item in blogPosts)
+    {
+        string url = Url.Action("Detail", "Blog", new { id = item.Id });
+
+        <div class="@columnClass isotope-item p-0">
+            <div class="portfolio-item">
+                <article class="blog-post blog-post-grid">
+                    
+                    @switch (item.PostType)
+                    {
+                        case ExpressMVC.UI.BlogPostType.Standard:
+                            {
+                                <div class="image-frame hover-effect-2">
+                                    <div class="image-frame-wrapper">
+                                        <a href="@url">
+                                            <img src="@item.Src" class="img-fluid" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+                            break;
+                        case ExpressMVC.UI.BlogPostType.SliderGallery:
+                            {
+                                <div class="owl-carousel owl-theme dots-style-2 nav-style-2" data-plugin-options="{'items': 1, 'dots': true, 'nav': false, 'animateIn': 'fadeIn', 'animateOut': 'fadeOut'}">
+                                    @foreach (var src in item.GalleryImageSrc)
+                                    {
+                                        <div>
+                                            <a href="@url">
+                                                <div class="image-frame hover-effect-2">
+                                                    <div class="image-frame-wrapper">
+                                                        <img src="@src" class="img-fluid" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            break;
+                        case ExpressMVC.UI.BlogPostType.EmbeddedVideo:
+                            {
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="@item.Src" width="640" height="360" allowfullscreen></iframe>
+                                </div>
+                            }
+                            break;
+                        case ExpressMVC.UI.BlogPostType.Html5Video:
+                            {
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video class="embed-responsive-item" autoplay="" muted="" loop="" controls="">
+                                        <source src="@item.Src" type="video/mp4">
+                                    </video>
+                                </div>
+                            }
+                            break;
+                        case ExpressMVC.UI.BlogPostType.Blockquote:
+                            {
+                                <blockquote class="blockquote blockquote-style-1 blockquote-primary">
+                                    <p class="mb-4 font-tertiary font-italic">@item.Src</p>
+                                </blockquote>
+                            }
+                            break;
+                        case ExpressMVC.UI.BlogPostType.Link:
+                            {
+                                <a href="@url" class="link-post d-block btn btn-primary btn-outline border-0 rounded-0 font-weight-bold text-center text-5 py-5" target="_blank">@item.Src</a>
+                            }
+                            break;
+                        case ExpressMVC.UI.BlogPostType.Audio:
+                            {
+                                <div class="embed-responsive embed-soundcloud" style="min-height:175px">
+                                    <iframe class="embed-responsive-item" src="@item.Src"></iframe>
+                                </div>
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                    <div class="blog-post-inner p-5">
+                        <div class="d-flex opacity-6 mb-1">
+                            <span class="top-sub-title text-color-primary pr-3">Jan 16, 2018</span>
+                        </div>
+                        <h2 class="blog-post-title">
+                            <a href="@url" class="link-color-dark">@item.Title.Truncate(100, "...") </a>
+                        </h2>
+                        <p>@Html.Raw(item.Body.Truncate(120, "..."))</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    }
+</div>
+
+
+<hr class="mt-5 mb-4">
+@*<div class="row align-items-center justify-content-between">
+    <div class="col-auto mb-3 mb-sm-0">
+        <span>Showing 1-9 of 60 results</span>
+    </div>
+    <div class="col-auto">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination mb-0">
+                <li class="page-item">
+                    <a class="page-link prev" href="#" aria-label="Previous">
+                        <span><i class="fas fa-angle-left" aria-label="Previous"></i></span>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">...</li>
+                <li class="page-item"><a class="page-link" href="#">15</a></li>
+                <li class="page-item">
+                    <a class="page-link next" href="#" aria-label="Next">
+                        <span><i class="fas fa-angle-right" aria-label="Next"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>*@
+
+
+
+@{
+        var actionName = string.Empty;
+        var routeValues = HttpContext.Current.Request.RequestContext.RouteData.Values;
+        if (routeValues != null)
+        {
+            if (routeValues.ContainsKey("action"))
+            {
+                actionName = routeValues["action"].ToString();
+            }
+        }
+    }
+
+    @Html.PagedListPager(blogPosts, page => Url.Action(actionName, "Blog", new { page }))

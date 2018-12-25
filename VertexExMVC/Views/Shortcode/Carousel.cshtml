@@ -1,0 +1,192 @@
+﻿@using ExpressMVC.UI
+@using ExpressMVC.Models.Common
+@using ExpressMVC.Models.Shortcodes
+
+@Html.ExpressMenu()
+
+@Html.ExpressPageHeader(new PageHeaderModel(title: "Carousel"))
+
+@Html.ExpressFooter()
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="mb-4">Dots Bottom</h4>
+
+                @Html.ExpressCarousel(
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="mb-4">Nav Bottom</h4>
+
+                @Html.ExpressCarousel(new CarouselModel() { UIProps = { Style = CarouselStyle.NavBottom } },
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="mb-4">Dots Inside</h4>
+
+                @Html.ExpressCarousel(new CarouselModel() { UIProps = { Style = CarouselStyle.DotsInside } },
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="mb-4">Nav Inside</h4>
+
+                @Html.ExpressCarousel(new CarouselModel() { UIProps = { Style = CarouselStyle.NavInside } },
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                @Html.ExpressSpace(Size.Large)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="mb-4">Nav and Dots Inside</h4>
+
+                @Html.ExpressCarousel(new CarouselModel() { UIProps = { Style = CarouselStyle.NavAndDotsInside } },
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="mb-4">Animation (bounceIn)</h4>
+
+                @Html.ExpressCarousel(new CarouselModel() { UIProps = { Style = CarouselStyle.NavInside, AnimateIn = AnimationType.bounceIn } },
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="mb-4">Animation (lightSpeedIn)</h4>
+
+                @Html.ExpressCarousel(new CarouselModel() { UIProps = { Style = CarouselStyle.NavInside, AnimateOut = AnimationType.lightSpeedIn } },
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="mb-4">Auto Play</h4>
+
+                @Html.ExpressCarousel(new CarouselModel() { UIProps = { Style = CarouselStyle.NavInside, AutoPlay = true } },
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+            @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                @Html.ExpressSpace(Size.Large)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="row">
+                    <div class="col">
+
+                        <h4 class="mt-5">Nav Outside</h4>
+                        @Html.ExpressCarousel(new CarouselModel() { DisplayCount = 4, UIProps = { Style = CarouselStyle.NavOutSide, Margin = 20 } },
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>,
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>,
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_5.jpg"> </text>,
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_6.jpg"> </text>)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                @Html.ExpressSpace(Size.Large)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h4>Inside Text</h4>
+
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta.
+                            Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia.
+                            Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus.
+                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                        </p>
+
+                        @Html.ExpressCarousel(new CarouselModel() { ClassName = "float-left mr-4 mb-3", CssStyle = "max-width: 242px;", UIProps = { Style = CarouselStyle.DotsInside } },
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+                    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>)
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta.
+                            Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing
+                            sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et
+                            ultrices posuere cubilia Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra leo. Nullam convallis, arcu
+                            vel pellentesque sodales, nisi est varius diam, ac ultrices sem ante quis sem.
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.  orci luctus et ultrices posuere cubilia Curae;
+                            In eu libero ligula. Fusce eget metus
+                            Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia.
+                            Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus.
+                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a>
+                            neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a>posuere cubilia Curae; In eu libero ligula. Fusce eget metus  orci
+                            luctus et ultrices posuere cubilia Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra leo..
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <hr class="invisible">
+                <h4>Full Width</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.ExpressCarousel(new CarouselModel() { DisplayCount = 5, UIProps = { Style = CarouselStyle.NavInside } },
+    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_1.jpg"> </text>,
+    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_4.jpg"> </text>,
+    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_9.jpg"> </text>,
+    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_6.jpg"> </text>,
+    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_2.jpg"> </text>,
+    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_9.jpg"> </text>,
+    @<text> <img alt="" class="img-fluid" src="/Content/img/portfolio/p_3.jpg"> </text>)

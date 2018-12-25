@@ -1,0 +1,22 @@
+﻿@model ExpressMVC.Models.Blog.BlogListModel
+@using ExpressMVC.Models.Common
+@using ExpressMVC.UI
+
+@Html.ExpressMenu()
+
+@Html.ExpressPageHeader(
+    new PageHeaderModel(title: String.Format("Blog Masonry {0} Columns", Model.UIProps.ColumnCount))
+    {
+        Src = "/Content/img/mix/man-look-up.jpg",
+        Lead = "Build stunning fluid layout of news and sidebars",
+        UIProps = { Type = PageHeaderType.CustomBackground }
+    })
+
+<section class="section">
+    <div class="container">
+
+        @Html.ExpressBlog(Model)
+    </div>
+</section>
+
+@Html.ExpressFooter()

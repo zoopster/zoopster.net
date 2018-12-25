@@ -1,0 +1,36 @@
+﻿@model ExpressMVC.Models.Shortcodes.DividerModel
+@using ExpressMVC.UI
+
+@{ 
+    string sizeClass = string.Empty;
+}
+
+@if (Model.Type == DividerType.Divider)
+{
+
+}
+else if (Model.Type == DividerType.Hr)
+{
+    <hr />
+}
+else if (Model.Type == DividerType.Space)
+{
+    switch (Model.Size)
+    {
+        case Size.Small:
+            sizeClass = "small";
+            break;
+        case Size.Default:
+            sizeClass = "";
+            break;
+        case Size.Large:
+            sizeClass = "large";
+            break;
+        default:
+            break;
+    }
+
+    <hr class="invisible @Model.ClassName @sizeClass" />
+}
+
+ 

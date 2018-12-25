@@ -1,0 +1,207 @@
+﻿@model ExpressMVC.Models.Shortcodes.IconBoxModel
+@using ExpressMVC.Models.Shortcodes
+@using ExpressMVC.UI
+
+@{ 
+    string iconBgColor = string.Empty;
+    string iconTextColor = string.Empty;
+    switch (Model.UIProps.IconColor)
+    {
+        case ThemeColor.Default:
+            iconBgColor = "bg-primary";
+            iconTextColor = "text-color-primary";
+            break;
+        case ThemeColor.Primary:
+            iconBgColor = "bg-primary";
+            iconTextColor = "text-color-primary";
+            break;
+        case ThemeColor.Secondary:
+            iconBgColor = "bg-secondary";
+            iconTextColor = "text-color-secondary";
+            break;
+        case ThemeColor.Tertiary:
+            iconBgColor = "bg-tertiary";
+            iconTextColor = "text-color-tertiary";
+            break;
+        case ThemeColor.Quaternary:
+            iconBgColor = "bg-quaternary";
+            iconTextColor = "text-color-quaternary";
+            break;
+        case ThemeColor.Dark:
+            iconBgColor = "bg-dark";
+            iconTextColor = "text-color-dark";
+            break;
+        default:
+            break;
+    }
+
+    string iconSize = string.Empty;
+    if (Model.UIProps.IconSize != TextSize.None)
+    {
+        iconSize = Enum.GetName(typeof(TextSize), Model.UIProps.IconSize);
+        iconSize = iconSize.ToLower().Replace("_", "-");
+    }
+
+    if (Model.UIProps.IsIconBoxReverse)
+    {
+        Model.ClassName += " icon-box-reverse";
+    }
+
+    string squareIconClass = string.Empty;
+    if (Model.UIProps.IsSquareIcon)
+    {
+        squareIconClass = "icon-box-icon-square";
+    }
+}
+
+
+@if (Model.UIProps.Style == IconBoxStyle.Style1)
+{
+    <div class="@Model.ClassName icon-box icon-box-style-1">
+        @if (!String.IsNullOrEmpty(Model.Icon))
+        {
+            <div class="icon-box-icon">
+                <i class="@Model.Icon @iconTextColor @iconSize"></i>
+            </div>
+        }
+        <div class="icon-box-info">
+            <div class="icon-box-info-title">
+                @if (!string.IsNullOrEmpty(Model.SubTitle))
+                {
+                    <span class="icon-box-sub-title">@Model.SubTitle.ToUpper()</span>
+                }
+                <h4>@Model.Title</h4>
+            </div>
+            <p>@Model.Content</p>
+        </div>
+    </div>
+}
+
+@if (Model.UIProps.Style == IconBoxStyle.Style2)
+{
+    <div class="@Model.ClassName icon-box icon-box-style-2">
+        @if (!String.IsNullOrEmpty(Model.Icon))
+        {
+            <div class="icon-box-icon">
+                <i class="@Model.Icon @iconTextColor @iconSize"></i>
+            </div>
+        }
+        <div class="icon-box-info-title">
+            <h4> @Model.Title </h4>
+        </div>
+        <div class="icon-box-info">
+            <p>@Model.Content</p>
+        </div>
+    </div>
+}
+
+@if (Model.UIProps.Style == IconBoxStyle.Style3)
+{
+    <div class="@Model.ClassName icon-box icon-box-style-3">
+        @if (!String.IsNullOrEmpty(Model.Icon))
+        {
+            <div class="icon-box-icon">
+                <i class="@Model.Icon @iconTextColor @iconSize"></i>
+            </div>
+        }
+        <div class="icon-box-info">
+            <div class="icon-box-info-title">
+                @if (!String.IsNullOrEmpty(Model.SubTitle))
+                {
+                    <span class="icon-box-sub-title">@Model.SubTitle.ToUpper()</span>
+                } 
+                <h4> @Model.Title </h4>
+            </div>
+            <p>@Html.Raw(Model.Content)</p>
+        </div>
+    </div>
+}
+
+@if (Model.UIProps.Style == IconBoxStyle.Style4)
+{
+    <div class="@Model.ClassName icon-box icon-box-style-4">
+        @if (!String.IsNullOrEmpty(Model.Icon))
+        {
+            <div class="icon-box-icon @squareIconClass @iconBgColor">
+                <i class="@Model.Icon @iconSize"></i>
+            </div>
+        } 
+        <div class="icon-box-info">
+            <div class="icon-box-info-title">
+               <h4>@Model.Title</h4>
+            </div>
+            <p>@Model.Content</p>
+        </div>
+    </div>
+}
+
+@if (Model.UIProps.Style == IconBoxStyle.Style5)
+{
+    <div class="@Model.ClassName icon-box icon-box-style-5">
+        @if (!String.IsNullOrEmpty(Model.Icon))
+        {
+            <div class="icon-box-icon @squareIconClass @iconBgColor">
+                <i class="@Model.Icon @iconSize"></i>
+            </div>
+        }
+        <div class="icon-box-info">
+            <div class="icon-box-info-title">
+                <h4>@Model.Title</h4>
+            </div>
+            <p>@Model.Content</p>
+        </div>
+    </div>
+}
+
+@if (Model.UIProps.Style == IconBoxStyle.Style6)
+{
+    <div class="@Model.ClassName icon-box icon-box-style-6">
+        @if (!String.IsNullOrEmpty(Model.Icon))
+        {
+            <div class="icon-box-icon">
+                <i class="@Model.Icon @iconTextColor @iconSize"></i>
+            </div>
+        }
+        <div class="icon-box-info">
+            <div class="icon-box-info-title">
+                 <h4>@Model.Title</h4>
+            </div>
+            <p>@Model.Content</p>
+        </div>
+    </div>
+}
+
+@if (Model.UIProps.Style == IconBoxStyle.Style7)
+{
+    <div class="@Model.ClassName icon-box icon-box-style-7">
+        @if (!String.IsNullOrEmpty(Model.Icon))
+        {
+            <div class="icon-box-icon">
+                <i class="@Model.Icon @iconTextColor @iconSize"></i>
+            </div>
+        }
+        <div class="icon-box-info">
+            <div class="icon-box-info-title">
+                <h4>@Model.Title</h4>
+            </div>
+            <p>@Model.Content</p>
+        </div>
+    </div>
+}
+
+@if (Model.UIProps.Style == IconBoxStyle.Style9)
+{
+    <div class="icon-box-animation-1">
+        <div class="icon-box icon-box-style-6">
+            <div class="icon-box-icon">
+                <i class="@Model.Icon @iconTextColor @iconSize"></i>
+            </div>
+            <div class="icon-box-info">
+                <div class="icon-box-info-title">
+                    <h4>@Model.Title</h4>
+                </div>
+                <p class="mb-0">@Model.Content</p>
+            </div>
+        </div>
+    </div> 
+}

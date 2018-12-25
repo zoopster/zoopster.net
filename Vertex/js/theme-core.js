@@ -10,7 +10,10 @@
             if (this.initialized) return;
             this.initialized = true;
 
-
+            AOS.init({
+                offset: 120,
+                duration: 500
+            });
             this.v_Common(); 
             this.v_FancyHeading();
             this.v_AnimateCharts();
@@ -539,46 +542,46 @@
         v_IntoAnimations: function () {
 
             if (!isMobileAlt) {
-                jQuery('.v-animation').each(function () {
+      //          jQuery('.v-animation').each(function () {
 
-                    var animatedItem = jQuery(this),
-						itemAnimation = animatedItem.data('animation'),
-						itemDelay = animatedItem.data('delay');
+      //              var animatedItem = jQuery(this),
+						//itemAnimation = animatedItem.data('animation'),
+						//itemDelay = animatedItem.data('delay');
 
-                    animatedItem.appear(function () {
-                        if (itemAnimation == 'fade-from-left') {
-                            animatedItem.delay(itemDelay).animate({
-                                'opacity': 1,
-                                'left': '0px'
-                            }, 600, 'easeOutCubic');
-                        } else if (itemAnimation == 'fade-from-right') {
-                            animatedItem.delay(itemDelay).animate({
-                                'opacity': 1,
-                                'right': '0px'
-                            }, 600, 'easeOutCubic');
-                        } else if (itemAnimation == 'fade-from-bottom') {
-                            {
-                                animatedItem.delay(itemDelay).animate({
-                                    'opacity': 1,
-                                    'bottom': '0px'
-                                }, 600, 'easeOutCubic');
-                            }
-                        } else if (itemAnimation == 'fade-in') {
-                            animatedItem.delay(itemDelay).animate({
-                                'opacity': 1
-                            }, 600, 'easeOutCubic');
-                        } else if (itemAnimation == 'grow') {
-                            setTimeout(function () {
-                                animatedItem.addClass('v-animate');
-                            }, itemDelay);
-                        } else {
-                            setTimeout(function () {
-                                animatedItem.addClass('v-animate');
-                            }, itemDelay);
-                        }
-                    }, { accX: 0, accY: -150 }, 'easeInCubic');
+      //              animatedItem.appear(function () {
+      //                  if (itemAnimation == 'fade-from-left') {
+      //                      animatedItem.delay(itemDelay).animate({
+      //                          'opacity': 1,
+      //                          'left': '0px'
+      //                      }, 600, 'easeOutCubic');
+      //                  } else if (itemAnimation == 'fade-from-right') {
+      //                      animatedItem.delay(itemDelay).animate({
+      //                          'opacity': 1,
+      //                          'right': '0px'
+      //                      }, 600, 'easeOutCubic');
+      //                  } else if (itemAnimation == 'fade-from-bottom') {
+      //                      {
+      //                          animatedItem.delay(itemDelay).animate({
+      //                              'opacity': 1,
+      //                              'bottom': '0px'
+      //                          }, 600, 'easeOutCubic');
+      //                      }
+      //                  } else if (itemAnimation == 'fade-in') {
+      //                      animatedItem.delay(itemDelay).animate({
+      //                          'opacity': 1
+      //                      }, 600, 'easeOutCubic');
+      //                  } else if (itemAnimation == 'grow') {
+      //                      setTimeout(function () {
+      //                          animatedItem.addClass('v-animate');
+      //                      }, itemDelay);
+      //                  } else {
+      //                      setTimeout(function () {
+      //                          animatedItem.addClass('v-animate');
+      //                      }, itemDelay);
+      //                  }
+      //              }, { accX: 0, accY: -150 }, 'easeInCubic');
 
-                });
+      //          });
             }
         },
         //End IntoAnimations
@@ -1151,3 +1154,24 @@ jQuery(document).ready(function($){
 		$newWord.removeClass('is-hidden').addClass('is-visible');
 	}
 });
+
+
+
+//<!--Global site tag (gtag.js) - Google Analytics -- >
+//    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127166265-1"></script>
+//    <script>
+//        window.dataLayer = window.dataLayer || [];
+//  function gtag(){dataLayer.push(arguments);}
+//  gtag('js', new Date());
+
+//  gtag('config', 'UA-127166265-1');
+//</script>
+
+
+//  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+//ga('create', 'UA-127166265-1', 'auto');
+//ga('send', 'pageview');

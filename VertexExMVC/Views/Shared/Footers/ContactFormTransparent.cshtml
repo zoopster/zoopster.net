@@ -1,0 +1,58 @@
+﻿@using ExpressMVC.Models.Common
+
+<footer id="footer" class="py-5 mt-0">
+    <div class="container">
+        <div class="row text-center mb-4">
+            <div class="col">
+                <span class="top-sub-title text-color-primary">LOREM IPSUM DOLOR SIT</span>
+                <h2 class="font-weight-semibold text-color-light">Contact Us</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-0">
+            <div class="col-md-9">
+                <form class="contact-form transparent-fields" action="#" method="POST">
+                    <div class="contact-form-success alert alert-success d-none">
+                        <strong>Success!</strong> Your message has been sent to us.
+                    </div>
+                    <div class="contact-form-error alert alert-danger d-none">
+                        <strong>Error!</strong> There was an error sending your message.
+                        <span class="mail-error-message d-block"></span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-4">
+                            <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                    </div>
+                    <div class="form-row mb-4">
+                        <div class="form-group col">
+                            <textarea maxlength="5000" data-msg-required="Please enter your message." rows="5" class="form-control" name="message" id="message" placeholder="Message" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <input type="submit" value="SEND MESSAGE" class="btn btn-primary btn-rounded btn-4 font-weight-semibold mx-auto text-0" data-loading-text="Loading...">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <a href="index.html" class="logo">
+                    <img alt="Express Web App" class="img-fluid max-width-150 mb-4" src="~/Content/img/logo-white.png" />
+                </a>
+            </div>
+        </div>
+        <div class="row text-center pt-0 pb-5">
+            <div class="col">
+                <p class="mb-2">1234 Street Name, City Name, USA</p>
+                <a href="tel:+1234567890" class="d-block mb-2">(123) 456-7890</a>
+                <a href="mailto:mail@example.com" class="link-underline-light text-color-light">mail@example.com</a>
+            </div>
+        </div>
+    </div>
+</footer>

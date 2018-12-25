@@ -1,0 +1,128 @@
+﻿@using (Html.BeginCss())
+{
+    <link rel="stylesheet" href="/Content/vendor/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="/Content/vendor/rs-plugin/css/layers.css">
+    <link rel="stylesheet" href="/Content/vendor/rs-plugin/css/navigation.css">
+}
+
+<!--Slider-->
+
+<div class="slider-container rev_slider_wrapper" style="height: 720px;">
+    <div id="revolutionSlider" class="slider rev_slider"
+         data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 720}">
+        <ul>
+            <li data-transition="fade" data-title="Advocate Team" data-thumb="/Content/img/custom/man-tshirt-red.jpg">
+
+                <img src="/Content/img/slider/h2-parallax-1.jpg"
+                     alt=""
+                     data-bgposition="center center"
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat"
+                     class="rev-slidebg">
+
+                <div class="tp-caption top-label"
+                     data-x="center" data-hoffset="0"
+                     data-y="center" data-voffset="-95"
+                     data-start="1000"
+                     style="z-index: 5"
+                     data-transform_in="y:[-300%];opacity:0;s:500;">YOUR TRUSTED</div>
+
+                <div class="tp-caption main-label"
+                     data-x="center" data-hoffset="0"
+                     data-y="center" data-voffset="-45"
+                     data-start="1500"
+                     data-whitespace="nowrap"
+                     data-transform_in="y:[100%];s:500;"
+                     data-transform_out="opacity:0;s:500;"
+                     style="z-index: 5"
+                     data-mask_in="x:0px;y:0px;">BOOTSTRAP 4 TEMPLATE</div>
+
+                <div class="tp-caption bottom-label"
+                     data-x="center" data-hoffset="0"
+                     data-y="center" data-voffset="5"
+                     data-start="2000"
+                     style="z-index: 5"
+                     data-transform_in="y:[100%];opacity:0;s:500;">Meet With Our Experienced Team for Solutions.</div>
+
+                <a class="tp-caption btn btn-primary btn-md"
+                   data-hash
+                   data-hash-offset="85"
+                   href="#home-intro"
+                   data-x="center" data-hoffset="0"
+                   data-y="center" data-voffset="80"
+                   data-start="2500"
+                   data-whitespace="nowrap"
+                   data-transform_in="y:[100%];s:500;"
+                   data-transform_out="opacity:0;s:500;"
+                   style="z-index: 5"
+                   data-mask_in="x:0px;y:0px;">Request a Free Demo</a>
+            </li>
+            <li data-transition="fade" data-title="Welcome to Express" data-thumb="/Content/img/banner/b14.jpg">
+
+                <img src="/Content/img/new/mikayla-mallek.jpg" alt=""
+                     data-bgposition="center center"
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat"
+                     class="rev-slidebg">
+
+                <div class="tp-caption top-label fw-6 fs-20"
+                     data-x="left" data-hoffset="100"
+                     data-y="center" data-voffset="-100"
+                     data-start="1000"
+                     style="z-index: 5"
+                     data-transform_in="y:[-300%];opacity:0;s:500;">WELCOME TO</div>
+
+                <div class="tp-caption main-label"
+                     data-x="left" data-hoffset="100"
+                     data-y="center" data-voffset="-45"
+                     data-start="1500"
+                     data-whitespace="nowrap"
+                     data-transform_in="y:[100%];s:500;"
+                     data-transform_out="opacity:0;s:500;"
+                     style="z-index: 5"
+                     data-mask_in="x:0px;y:0px;">EXPRESS TEMPLATE</div>
+
+                <div class="tp-caption text-white"
+                     data-x="left" data-hoffset="100"
+                     data-y="center" data-voffset="40"
+                     data-start="2000"
+                     style="z-index: 5; font-size:17px; color:#e0e0e0!important"
+                     data-transform_in="y:[100%];opacity:0;s:500;">
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, <br />
+                    per inceptos himenaeos. dolor sit amet consectet adipiscing elit. <br />
+                    Fusce elementum. dolor sit amet consectet adipiscing elit.
+                </div>
+
+                <a class="tp-caption btn btn-primary btn-md btn-rounded fs-14"
+                   href="#"
+                   data-x="left" data-hoffset="100"
+                   data-y="center" data-voffset="135"
+                   data-start="2500"
+                   data-whitespace="nowrap"
+                   data-transform_in="y:[100%];s:500;"
+                   data-transform_out="opacity:0;s:500;"
+                   style="z-index: 5"
+                   data-mask_in="x:0px;y:0px;">Purchase Now</a>
+
+                <span class="tp-caption video-link-wrap"
+                      href="#"
+                      data-x="left" data-hoffset="300"
+                      data-y="center" data-voffset="135"
+                      data-start="2500"
+                      data-whitespace="nowrap"
+                      data-transform_in="y:[100%];s:500;"
+                      data-transform_out="opacity:0;s:500;"
+                      style="z-index: 5;"
+                      data-mask_in="x:0px;y:0px;"><span class="icon"></span><a href="#">How it works</a></span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--End Slider-->
+
+@using (Html.BeginScripts())
+{
+    <script src="/Content/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/Content/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+}

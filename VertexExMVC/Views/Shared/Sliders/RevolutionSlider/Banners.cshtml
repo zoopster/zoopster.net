@@ -1,0 +1,244 @@
+﻿@using (Html.BeginCss())
+{
+
+    <link rel="stylesheet" href="/Content/vendor/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="/Content/vendor/rs-plugin/css/layers.css">
+    <link rel="stylesheet" href="/Content/vendor/rs-plugin/css/navigation.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700,800,900|Roboto%3A400%2C100%2C300%2C500%2C700%2C900" rel="stylesheet" type="text/css" />
+
+    <style>
+        .demos-filter {
+            margin: 0;
+            text-align: right;
+        }
+
+        .demos-filter li {
+            list-style: none;
+            margin: 10px 0px;
+        }
+
+        .demos-filter li a {
+            display: block;
+            border: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #444;
+        }
+
+        .demos-filter li a:hover,
+        .demos-filter li.activeFilter a {
+            color: #1ABC9C;
+        }
+
+        @@media (max-width: 991px) {
+            .demos-filter {
+                text-align: center;
+            }
+
+            .demos-filter li {
+                float: left;
+                width: 33.3%;
+                padding: 0 20px;
+            }
+        }
+
+        @@media (max-width: 767px) {
+            .demos-filter li {
+                width: 50%;
+            }
+        }
+
+        .revo-slider-emphasis-text {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            font-family: 'Raleway', sans-serif;
+            padding: 15px 20px;
+            border-top: 2px solid #FFF;
+            border-bottom: 2px solid #FFF;
+        }
+
+        .revo-slider-desc-text {
+            font-size: 20px;
+            font-family: 'Lato', sans-serif;
+            width: 650px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .revo-slider-caps-text {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .tp-video-play-button {
+            display: none !important;
+        }
+
+        .tp-caption {
+            white-space: nowrap;
+        }
+
+        .tp-caption.TechJournal-Button,
+        .TechJournal-Button {
+            color: rgba(255,255,255,1.00);
+            font-size: 13px;
+            line-height: 40px;
+            font-weight: 900;
+            font-style: normal;
+            font-family: Raleway;
+            padding: 1px 30px 1px 30px;
+            text-decoration: none;
+            text-align: left;
+            background-color: rgba(138,0,255,1.00);
+            border-color: rgba(0,0,0,1.00);
+            border-style: solid;
+            border-width: 0px;
+            border-radius: 0px 0px 0px 0px;
+            letter-spacing: 3px
+        }
+
+        .tp-caption.TechJournal-Button:hover,
+        .TechJournal-Button:hover {
+            color: rgba(0,0,0,1.00);
+            text-decoration: none;
+            background-color: rgba(255,255,255,1.00);
+            border-color: rgba(0,0,0,1.00);
+            border-style: solid;
+            border-width: 0px;
+            border-radius: 0px 0px 0px 0px;
+            cursor: pointer
+        }
+
+        .tp-caption.TechJournal-Big,
+        .TechJournal-Big {
+            color: rgba(255,255,255,1.00);
+            font-size: 120px;
+            line-height: 120px;
+            font-weight: 900;
+            font-style: normal;
+            font-family: Raleway;
+            padding: 0 0 0 0px;
+            text-decoration: none;
+            text-align: left;
+            background-color: transparent;
+            border-color: transparent;
+            border-style: none;
+            border-width: 0px;
+            border-radius: 0 0 0 0px;
+            letter-spacing: 0px
+        }
+    </style>
+}
+
+<!--Slider-->
+
+<div class="slider-container rev_slider_wrapper" style="height: 650px;">
+    <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650}">
+        <ul>
+
+            <li data-transition="fade">
+                <img src="/Content/img/new/smile-man.jpg"
+                     alt=""
+                     data-bgposition="center center"
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat"
+                     class="rev-slidebg">
+
+                <div class="tp-caption fw-7 ls-2 text-uppercase"
+                     data-x="['left','left','left','left']"
+                     data-hoffset="['80','80','80','80']"
+                     data-y="['center','center','center','center']"
+                     data-voffset="['-100','-100','-100','-100']"
+                     data-start="500"
+                     data-paddingleft="['0', '0', '0', '0']"
+                     style="z-index: 5; font-size: 18px;"
+                     data-transform_in="y:[-300%];opacity:0;s:500;">Welcome To</div>
+
+                <h1 class="tp-caption text-color-light fw-7 text-uppercase"
+                    data-x="['left','left','left','left']"
+                    data-hoffset="['75','75','75','75']"
+                    data-y="['center','center','center','center']"
+                    data-voffset="['-45','-45','-45','-45']"
+                    data-fontsize="['80', '80', '70', '60']"
+                    data-start="800"
+                    data-paddingleft="['0', '0', '0', '0']"
+                    style="z-index: 5; font-size: 70px;"
+                    data-transform_in="y:[-300%];opacity:0;s:500;">
+                    Express Design
+                </h1>
+
+                <div class="tp-caption text-color-light"
+                     data-x="['left','left','left','left']"
+                     data-hoffset="['81','81','81','81']"
+                     data-y="['center','center','center','center']"
+                     data-voffset="['25','25','25','25']"
+                     data-start="1500"
+                     data-paddingleft="['0', '0', '0', '0']"
+                     data-fontsize="26"
+                     style="z-index: 5;"
+                     data-transform_in="y:[-300%];opacity:0;s:500;">We’re here to help you manage your work.</div>
+
+                <div class="tp-caption text-uppercase"
+                     data-x="['left','left','left','left']"
+                     data-hoffset="['80','80','80','80']"
+                     data-y="['center','center','center','center']"
+                     data-voffset="['55','55','55','55']"
+                     data-start="1500"
+                     data-paddingleft="['0', '0', '0', '0']"
+                     data-fontsize="['12', '12', '12', '18']"
+                     data-lineheight="['12', '12', '12', '22']"
+                     style="z-index: 5; color: #6acdca;"
+                     data-transform_in="y:[-300%];opacity:0;s:500;"><i class="fa fa-map-marker"></i>Awesome Portfolio Layouts</div>
+
+                <div class="tp-caption text-uppercase"
+                     data-x="['right','right','right','right']"
+                     data-hoffset="['80','80','80','80']"
+                     data-y="['center','center','center','center']"
+                     data-voffset="['-40','-40','-40','-40']"
+                     data-start="1500"
+                     style="z-index: 5;"
+                     data-transform_in="opacity:0;s:500;">
+
+                    <a href="#" class="play-video-custom custom-rev-next">
+                        <img src="/Content/img/core/play-icon.png" class="img-fluid" width="90" height="90" />
+                    </a>
+                </div>
+            </li>
+            <li data-transition="fade">
+                <img src="/Content/img/custom/c23.jpg"
+                     alt=""
+                     data-bgposition="center center"
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat"
+                     class="rev-slidebg">
+
+                <div class="rs-background-video-layer"
+                     data-forcerewind="on"
+                     data-volume="mute"
+                     data-videowidth="100%"
+                     data-videoheight="100%"
+                     data-videomp4="https://s3.envato.com/h264-video-previews/36e16580-045e-47da-99bc-b9c4b7e16641/18963123.mp4"
+                     data-videopreload="preload"
+                     data-videoloop="none"
+                     data-forceCover="1"
+                     data-aspectratio="16:9"
+                     data-autoplay="true"
+                     data-autoplayonlyfirsttime="false"
+                     data-nextslideatend="true">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--End Slider-->
+
+@using (Html.BeginScripts())
+{
+    <script src="/Content/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/Content/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+}

@@ -1,0 +1,71 @@
+﻿@model ExpressMVC.Models.Shortcodes.BlockquoteModel
+
+
+@{ 
+    string footerClass = string.Empty;
+
+    string aligmentClass = string.Empty;
+    switch (Model.Alignment)
+    {
+        case ExpressMVC.UI.Alignment.Right:
+            aligmentClass = "text-right";
+            break;
+        case ExpressMVC.UI.Alignment.Center:
+            aligmentClass = "text-center";
+            break;
+        default:
+            break;
+    }
+
+    string textSizeClass = string.Empty;
+    switch (Model.TextSize)
+    {
+        case ExpressMVC.UI.Size.Small:
+            textSizeClass = "text-1";
+            break;
+        case ExpressMVC.UI.Size.Large:
+            textSizeClass = "text-3";
+            break;
+        default:
+            break;
+    }
+
+    string fontClass = string.Empty;
+    if (Model.UseAlternateFont)
+    {
+        fontClass = "font-tertiary font-italic";
+    }
+
+    string showIconClass = string.Empty;
+    if (Model.ShowIcon)
+    {
+        fontClass = "font-tertiary font-italic";
+        showIconClass = " blockquote-style-1 blockquote-primary";
+    }
+
+    string showBorderClass = string.Empty;
+    if (Model.ShowBorder)
+    {
+        fontClass = "font-tertiary font-italic";
+        showBorderClass = " blockquote-style-2 blockquote-primary";
+        footerClass = "blockquote-footer-style-1";
+    }
+}
+
+<blockquote class="blockquote @textSizeClass @aligmentClass @showIconClass @showBorderClass ">
+    <p class="mb-2 @fontClass ">@Model.Content</p>
+    <footer class="blockquote-footer @footerClass ">
+        @if (Model.ShowBorder)
+        {
+            <div class="blockquote-footer">
+                @Model.SomeoneFamousIn <cite title="Source Title">@Model.SourceTitle</cite>
+            </div>
+        }
+        else
+        {
+            @Model.SomeoneFamousIn <cite title="Source Title">@Model.SourceTitle</cite>
+        }
+    </footer>
+</blockquote>
+
+

@@ -1,0 +1,363 @@
+﻿@using ExpressMVC.Models.Common
+@using ExpressMVC.Models.Shortcodes
+@using ExpressMVC.UI
+
+@Html.ExpressMenu()
+
+@Html.ExpressPageHeader(new PageHeaderModel(title: "Blockquote"))
+
+@Html.ExpressFooter()
+
+
+<section class="section">
+
+
+
+<div class="container pt-3">
+    <div class="row mb-5 pb-3">
+
+        <div class="col">
+
+            <h4>Default Counters:</h4>
+            <hr class="mb-4">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(label: "Happy Clients", to: 25000, apend: "+")
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(label: "Years in Business", to: 15)
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(label: "Answered Tickets", to: 352)
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(label: "Development Hours", to: 178)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5 pb-3">
+
+        <div class="col">
+
+            <h4>Counters Sizes:</h4>
+            <hr class="mb-4">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(label: "XSmall", to: 352, size: CounterSize.XSmall)
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(label: "Small", to: 352, size: CounterSize.Small)
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(label: "Large", to: 352, size: CounterSize.Large)
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(label: "XLarge", to: 352, size: CounterSize.XLarge)
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row mb-5 pb-3">
+
+        <div class="col">
+
+            <h4>Counters Colors:</h4>
+            <hr class="mb-4">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                       new CounterModel()
+                       {
+                           Label = "Happy Clients",
+                           Append = "+",
+                           To = 25000,
+                           UIProps = { Color = ThemeColor.Primary }
+                       })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                        new CounterModel()
+                        {
+                            Label = "Years in Business",
+                            To = 15,
+                            UIProps = { Color = ThemeColor.Secondary }
+                        })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                       new CounterModel()
+                       {
+                           Label = "Answered Tickets",
+                           To = 352,
+                           UIProps = { Color = ThemeColor.Tertiary }
+                       })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                       new CounterModel()
+                       {
+                           Label = "Development Hours",
+                           To = 178,
+                           UIProps = { Color = ThemeColor.Quaternary }
+                       })
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+
+        <div class="col">
+            <h4>Inside Section:</h4>
+            <hr class="mb-5">
+        </div>
+    </div>
+</div>
+
+
+@Html.ExpressSection(new SectionModel() { HasContainerAndRow = true, Height = SectionHeight.Height2, ClassName = "bg-dark" },
+    @<text>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(new CounterModel() { ClassName = "counters-light", Label = "Happy Clients", Append = "+", To = 25000 })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(new CounterModel() { ClassName = "counters-light", Label = "Years in Business", To = 15 })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(new CounterModel() { ClassName = "counters-light", Label = "Answered Tickets", To = 352 })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(new CounterModel() { ClassName = "counters-light", Label = "Development Hours", To = 178 })
+        </div>
+    </text>)
+
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col">
+            <h4>Inside Parallax:</h4>
+            <hr class="mb-5">
+        </div>
+    </div>
+</div>
+@Html.ExpressSection(new SectionModel() { HasContainerAndRow = true, IsParallax = true, Src = "/content/img/banner/b16.jpg" },
+    @<text>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(new CounterModel() { ClassName = "counters-light", Label = "Happy Clients", Append = "+", To = 25000 })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(new CounterModel() { ClassName = "counters-light", Label = "Years in Business", To = 15 })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(new CounterModel() { ClassName = "counters-light", Label = "Answered Tickets", To = 352 })
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            @Html.ExpressCounter(new CounterModel() { ClassName = "counters-light", Label = "Development Hours", To = 178 })
+        </div>
+    </text>)
+@*<section class="parallax section section-height-2 section-text-light overlay overlay-color-dark overlay-show overlay-op-8" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="img/parallax/parallax-4.jpg">
+        <div class="container">
+            <div class="counters counters-light">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="counter">
+                            <strong data-to="25000" data-append="+">0</strong>
+                            <label>Happy Clients</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="counter">
+                            <strong data-to="16">0</strong>
+                            <label>Years in Business</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="counter">
+                            <strong data-to="3500" data-append="+">0</strong>
+                            <label>Answered Tickets</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="counter">
+                            <strong data-to="3000" data-append="+">0</strong>
+                            <label>Development Hours</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+<div class="container pt-5">
+    <div class="row mb-5 pb-3">
+
+        <div class="col">
+
+            <h4>With Icons:</h4>
+            <hr class="mb-4">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                           new CounterModel()
+                           {
+                               Label = "Happy Clients",
+                               Append = "+",
+                               To = 25000,
+                               Icon = Icons.FontAwesome.User
+                           })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                           new CounterModel()
+                           {
+                               Label = "Years in Business",
+                               To = 15,
+                               Icon = "lnr lnr-apartment"
+                           })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                           new CounterModel()
+                           {
+                               Label = "Answered Tickets",
+                               To = 352,
+                               Icon = "sl-support sl"
+                           })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                           new CounterModel()
+                           {
+                               Label = "Development Hours",
+                               To = 178,
+                               Icon = "sl-clock sl"
+                           })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5 pb-3">
+
+        <div class="col">
+
+            <h4>Animations:</h4>
+            <hr class="mb-4">
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                       new CounterModel()
+                       {
+                           Label = "Happy Clients",
+                           Append = "+",
+                           To = 25000,
+                           UIProps = { Animation = new AnimationModel(AnimationType.fadeInLeftShorter, 100) }
+                       })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                       new CounterModel()
+                       {
+                           Label = "Years in Business",
+                           To = 15,
+                           UIProps = { Animation = new AnimationModel(AnimationType.fadeInLeftShorter, 300) }
+                       })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                        new CounterModel()
+                        {
+                            Label = "Answered Tickets",
+                            To = 352,
+                            UIProps = { Animation = new AnimationModel(AnimationType.fadeInLeftShorter, 500) }
+                        })
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    @Html.ExpressCounter(
+                      new CounterModel()
+                      {
+                          Label = "Development Hours",
+                          To = 178,
+                          UIProps = { Animation = new AnimationModel(AnimationType.fadeInLeftShorter, 700) }
+                      })
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row mb-5 pb-3">
+
+        <div class="col">
+
+            <h4>Special Content:</h4>
+            <hr class="mb-4">
+            <div class="counters">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="counter text-dark">
+                            <strong data-to="70.13" data-plugin-options="{'decimals': 2}">0</strong>
+                            <label>Decimals</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="counter text-dark">
+                            <strong class="d-inline-block">$</strong>
+                            <strong class="d-inline-block" data-to="15">0</strong>
+                            <label>Currency</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="counter text-dark">
+                            <strong class="d-inline-block" data-to="78">0</strong>
+                            <strong class="d-inline-block">%</strong>
+                            <label>Percentual</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="counter text-dark">
+                            <strong data-to="5000" data-append="+">0</strong>
+                            <label>Append Symbol</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5 pb-3">
+
+        <div class="col-lg-6">
+
+            <h4>Options:</h4>
+            <hr class="mb-4">
+            <div class="counters">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="counter text-dark">
+                            <strong data-to="1000" data-plugin-options="{'speed': 5000}">0</strong>
+                            <label>Speed</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="counter text-dark">
+                            <strong data-to="1000" data-plugin-options="{'refreshInterval': 500}">0</strong>
+                            <label>Refresh Interval</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+
+            <h4>Inline:</h4>
+            <hr class="mb-4">
+            <p class="text-4">Express has more than <strong class="text-primary" data-to="30000" data-plugin-counter data-plugin-options="{'speed': 3500}">0</strong> happy customers.</p>
+        </div>
+    </div>
+</div>
+
+</section>

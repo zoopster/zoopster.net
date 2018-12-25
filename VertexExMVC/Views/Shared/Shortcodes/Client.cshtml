@@ -1,0 +1,63 @@
+﻿@model ExpressMVC.Models.Shortcodes.ClientModel
+@using ExpressMVC.Models.Shortcodes
+
+@if (Model.ClientType == ClientTypes.Carousel)
+{
+    <div class="clients-wrap carousel-wrap @Model.ClassName" style="@Model.Style">
+
+        <div class="owl-carousel" data-plugin-options='{"items": @Model.ItemCount, "singleItem": @Model.SingelItem.ToHtmlString(), "autoPlay": @Model.AutoPlay.ToHtmlString(), "dots":@Model.Dots.ToHtmlString(), "margin":@Model.Margin  }'>
+            @foreach (var item in Model.Items)
+            {
+                if (!Model.HasTooltip)
+                {
+                    <div class="item">
+                        <figure>
+                            <a href="@item.SeName" target="_blank">
+                                <img src="@item.Logo" />
+                            </a>
+                        </figure>
+                    </div>
+                }
+                else
+                {
+                    <div class="item">
+                        <figure>
+                            <a href="@item.SeName" target="_blank" class="lite-tooltip" data-title="@item.Name" data-location="top">
+                                <img src="@item.Logo" />
+                            </a>
+                        </figure>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="customNavigation">
+            <a class="prev"><i class="fa fa-angle-left"></i></a>
+            <a class="next"><i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+}
+
+@if (Model.ClientType == ClientTypes.Table)
+{
+    var c = Model.Items.Count / Model.RowCount;
+    <table class="clients-wrap @Model.ClassName">
+        <tbody>
+            @for (int i = 0; i < Model.RowCount; i++)
+            {
+                <tr>
+                    @foreach (var item in Model.Items.Skip(c * i).Take(c))
+                    {
+                        <td>
+                            <figure>
+                                <a href="@item.SeName" target="_blank" class="lite-tooltip" data-title="@item.Name" data-location="top">
+                                    <img src="@item.Logo" />
+                                </a>
+                            </figure>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}

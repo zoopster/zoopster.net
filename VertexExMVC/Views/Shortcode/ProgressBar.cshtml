@@ -1,0 +1,92 @@
+﻿@using ExpressMVC.Models.Common
+@using ExpressMVC.UI
+@using ExpressMVC.Models.Shortcodes
+
+@Html.ExpressMenu()
+
+@Html.ExpressPageHeader(new PageHeaderModel(title: "Progressbars"))
+
+<section class="section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 order-1">
+                @Html.ExpressSidebar(name: "ShortcodeMenu")
+            </div>
+
+            <div class="col-md-8 col-lg-9 order-2">
+
+                <div class="row">
+                    <div class="col">
+
+                        @Html.ExpressHeading(HTag.h4, new TextElement("Default Progress Bars"), HeadingStyle.NarrowLine)
+
+                        @Html.ExpressProgressBar(0, 0)
+                        @Html.ExpressProgressBar(25, 500)
+                        @Html.ExpressProgressBar(50, 700)
+                        @Html.ExpressProgressBar(75, 900)
+                        @Html.ExpressProgressBar(99, 1100)
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        @Html.ExpressSpace(Size.Large)
+                        @Html.ExpressHeading(HTag.h4, new TextElement("Without Value"), HeadingStyle.NarrowLine)
+
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 70, Delay = 500, UIProps = { ShowValue = false } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 90, Delay = 500, UIProps = { ShowValue = false } })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        @Html.ExpressSpace(Size.Large)
+                        @Html.ExpressHeading(HTag.h4, new TextElement("Size"), HeadingStyle.NarrowLine)
+
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 50, Delay = 500, UIProps = { Size = Size.Small } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 75, Delay = 500, UIProps = { Size = Size.Default } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 99, Delay = 500, UIProps = { Size = Size.Large } })
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        @Html.ExpressSpace(Size.Large)
+                        @Html.ExpressHeading(HTag.h4, new TextElement("Colors"), HeadingStyle.NarrowLine)
+
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 50, Delay = 500, UIProps = { Color = ThemeColor.Dark } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 60, Delay = 500, UIProps = { Color = ThemeColor.Default } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 70, Delay = 500, UIProps = { Color = ThemeColor.Primary } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 80, Delay = 500, UIProps = { Color = ThemeColor.Quaternary } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 90, Delay = 500, UIProps = { Color = ThemeColor.Secondary } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Value = 99, Delay = 500, UIProps = { Color = ThemeColor.Tertiary } })
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        @Html.ExpressSpace(Size.Large)
+                        @Html.ExpressHeading(HTag.h4, new TextElement("Labels Outside"), HeadingStyle.NarrowLine)
+
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Label = new TextElement("Development"), Value = 50, Delay = 500, UIProps = { IsLabelOutside = true } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Label = new TextElement("Strategy"), Value = 60, Delay = 500, UIProps = { IsLabelOutside = true } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Label = new TextElement("Marketing"), Value = 70, Delay = 500, UIProps = { IsLabelOutside = true } })
+                        @Html.ExpressProgressBar(new ProgressBarModel() { Label = new TextElement("SEO"), Value = 80, Delay = 500, UIProps = { IsLabelOutside = true } })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@Html.ExpressFooter()

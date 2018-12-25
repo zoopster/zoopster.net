@@ -1,0 +1,94 @@
+﻿@model ExpressMVC.Models.Shortcodes.CarouselModel
+@using ExpressMVC.UI
+
+@{ 
+    string options = string.Empty;
+    string className = "dots-style-1";
+    switch (Model.UIProps.Style)
+    {
+        case CarouselStyle.DotsBottom:
+            className = "dots-style-1";
+            options += string.Format("'dots': {0}, ", "true");
+            break;
+        case CarouselStyle.NavBottom:
+            className = "nav-style-1";
+            options += string.Format("'nav': {0}, ", "true");
+            options += string.Format("'dots': {0}, ", "false");
+            break;
+        case CarouselStyle.DotsInside:
+            className = "dots-style-2";
+            options += string.Format("'dots': {0}, ", "true");
+            break;
+        case CarouselStyle.NavInside:
+            className = "nav-style-2";
+            options += string.Format("'dots': {0}, ", "false");
+            options += string.Format("'nav': {0}, ", "true");
+            break;
+        case CarouselStyle.NavAndDotsInside:
+            className = "dots-style-2 nav-style-2";
+            options += string.Format("'nav': {0}, ", "true");
+            options += string.Format("'dots': {0}, ", "true");
+            break;
+        case CarouselStyle.NavOutSide:
+            className = "nav-style-3";
+            options += string.Format("'dots': {0}, ", "false");
+            options += string.Format("'nav': {0}, ", "true");
+            break;
+        default:
+            break;
+    }
+
+
+    if (Model.DisplayCount > 0)
+    {
+        options += string.Format("'items': {0}, ", Model.DisplayCount);
+    }
+
+    options += string.Format("'animateIn': '{0}', ", Model.UIProps.AnimateIn.ToString());
+    options += string.Format("'animateOut': '{0}', ", Model.UIProps.AnimateOut.ToString());
+
+    if (Model.UIProps.Margin.HasValue && Model.UIProps.Margin.Value > 0)
+    {
+        options += string.Format("'margin': {0}, ", Model.UIProps.Margin.Value);
+    }
+    if (Model.UIProps.Loop.HasValue && Model.UIProps.Loop.Value)
+    {
+        options += string.Format("'loop': {0}, ", Model.UIProps.Loop.Value.ToHtmlString());
+    }
+    if (Model.UIProps.AutoPlay.HasValue && Model.UIProps.AutoPlay.Value)
+    {
+        options += string.Format("'autoplay': {0}, ", Model.UIProps.AutoPlay.Value.ToHtmlString());
+    }
+
+    if (Model.DisplayCount == 3)
+    {
+        options += "'responsive': {'0': {'items': 1}, '576': {'items': 1}, '768': {'items': 2}, '992': {'items': 3}, '1200': {'items': 3}}, ";
+    }
+    if (Model.DisplayCount == 4)
+    {
+        options += "'responsive': {'0': {'items': 1}, '576': {'items': 1}, '768': {'items': 3}, '992': {'items': 4}, '1200': {'items': 4}}, ";
+    }
+    if (Model.DisplayCount == 5)
+    {
+        options += "'responsive': {'0': {'items': 1}, '576': {'items': 2}, '768': {'items': 3}, '992': {'items': 5}, '1200': {'items': 5}}, ";
+    }
+    if (Model.DisplayCount == 6)
+    {
+        options += "'responsive': {'0': {'items': 1}, '576': {'items': 3}, '768': {'items': 3}, '992': {'items': 6}, '1200': {'items': 6}}, ";
+    }
+
+    options = options.Trim().TrimEnd(',');
+
+
+}
+
+<div class="owl-carousel owl-theme @Model.ClassName @className " @Model.GetCssStyle() data-plugin-options="{ @options }">
+    @foreach (var item in Model.Items)
+    {
+        <div>
+            @Html.Raw(item)
+        </div>
+    }
+</div>
+
+

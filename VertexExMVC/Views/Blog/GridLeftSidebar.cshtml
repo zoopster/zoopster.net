@@ -1,0 +1,56 @@
+﻿@model ExpressMVC.Models.Blog.BlogListModel
+@using ExpressMVC.Models.Common
+
+@Html.ExpressMenu()
+
+@Html.ExpressFooter()
+
+@using (Html.BeginCss())
+{
+    <link href="/Content/vendor/dzsparallaxer/dzsparallaxer.css" rel="stylesheet" />
+    <link href="/Content/vendor/dzsparallaxer/dzsscroller/scroller.css" rel="stylesheet" />
+    <link href="/Content/vendor/dzsparallaxer/advancedscroller/plugin.css" rel="stylesheet" />
+}
+
+@using (Html.BeginScripts())
+{
+    <script src="/Content/vendor/dzsparallaxer/dzsparallaxer.js"></script>
+    <script src="/Content/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
+    <script src="/Content/vendor/dzsparallaxer/advancedscroller/plugin.js"></script>
+}
+
+<section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall b-bordered bg-overlay--gradient-dark">
+
+    <div class="divimage dzsparallaxer--target w-100" style="height: 120%; background-image: url(/Content/img/mix/man-look-up.jpg);">
+    </div>
+
+    <div class="container pt-175 pb-100 text-center text-white z-index-1">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h2 class="fs-40 fw-7 mb-15">
+                    Blog Left Sidebar
+                </h2>
+                <p class="section-sub-title">Build stunning fluid layout of news and sidebars</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="has-sidebar has-left-sidebar bordered">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 left-side-sidebar pt-70">
+                @Html.ExpressSidebar(new SidebarModel(name: "Sidebar"))
+            </div>
+
+            <div class="col-md-9 right-side-sidebar pt-70 pb-70">
+
+                @Html.ExpressBlog(Model) 
+
+
+            </div>
+        </div>
+    </div>
+</div>

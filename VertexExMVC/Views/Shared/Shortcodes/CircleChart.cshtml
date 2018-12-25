@@ -1,0 +1,21 @@
+﻿@model ExpressMVC.Models.Shortcodes.CircleChartModel
+
+<div class="text-center">
+    <div class="circular-bar mt-3">
+        <div class="circular-bar-chart" 
+             data-linewidth="@Model.UIProps.LineWidth"
+             data-percent="@Model.Percent" 
+             data-size="@Model.UIProps.Size" 
+             data-plugin-options="{'barColor': '@Model.UIProps.BarColor', 'lineWidth': '@Model.UIProps.LineWidth'}">
+            <label>@Model.Percent%</label>
+        </div>
+    </div>
+    @if (!String.IsNullOrEmpty(Model.Text))
+    { 
+        <h5 class="mb-0 mt-2">@Model.Text</h5>
+    } 
+    @if (!String.IsNullOrEmpty(Model.DetailText))
+    {
+        <p>@Model.DetailText</p>
+    }  
+</div>

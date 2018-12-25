@@ -1,0 +1,14 @@
+﻿@model ExpressMVC.Models.Shortcodes.AlertModel
+
+@{
+    string alertTypeClass = "alert-" + Model.AlertType.ToString().ToLower();
+    string dismissableClass = Model.IsDismissable ? "alert-dismissable" : string.Empty;
+}
+
+<div class="alert-group">
+    <div class="alert @alertTypeClass @dismissableClass">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        @Html.Raw(Model.Content)
+</div>
+</div>
+ 

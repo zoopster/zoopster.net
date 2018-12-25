@@ -1,0 +1,29 @@
+﻿@model ExpressMVC.Models.Blog.BlogListModel
+@using ExpressMVC.Models.Common
+
+@Html.ExpressMenu(new HeaderModel() { UIProps = { Transparency = ExpressMVC.UI.HeaderTransparency.Transparent } })
+
+@Html.ExpressPageHeader(new PageHeaderModel(title: "Default Blog Layout")
+{
+    Lead = "Our Latest News",
+    Src = "/Content/img/new/hero.jpg",
+    UIProps = { Type = ExpressMVC.UI.PageHeaderType.Parallax }
+})
+
+@Html.ExpressFooter()
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-8 order-1 pr-4">
+
+                @Html.ExpressBlog(Model)
+
+            </div>
+
+            <div class="col-md-4 col-lg-4 order-2 pl-4">
+                @Html.ExpressSidebar(new SidebarModel(name: "BlogSidebar"))
+            </div>
+        </div>
+    </div>
+</section>

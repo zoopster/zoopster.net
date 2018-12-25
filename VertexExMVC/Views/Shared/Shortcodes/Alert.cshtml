@@ -1,0 +1,42 @@
+﻿@model ExpressMVC.Models.Shortcodes.AlertModel
+
+@{
+    string alertTypeClass = "alert-" + Model.Type.ToString().ToLower();
+    string dismissableClass = Model.Dismissible ? "alert-dismissible" : string.Empty;
+
+    string sizeClass = string.Empty;
+    switch (Model.UIProps.Size)
+    {
+        case ExpressMVC.UI.Size.Small:
+            sizeClass = "alert-sm";
+            break;
+        case ExpressMVC.UI.Size.Default:
+            sizeClass = string.Empty;
+            break;
+        case ExpressMVC.UI.Size.Large:
+            sizeClass = "alert-lg";
+            break;
+        default:
+            break;
+    }
+
+    string colorClass = string.Empty;
+    if (Model.UIProps.Color != ExpressMVC.UI.ThemeColor.Default)
+    {
+        colorClass = String.Format("alert-{0}", Model.UIProps.Color.ToString().ToLower());
+        if (Model.Type == ExpressMVC.UI.AlertType.Default)
+        {
+            alertTypeClass = string.Empty;
+        }
+    }
+}
+
+
+<div class="alert @alertTypeClass @dismissableClass @sizeClass @colorClass">
+    @if (Model.Dismissible)
+    { 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+    }
+    @Html.Raw(Model.Content)
+</div>
+
