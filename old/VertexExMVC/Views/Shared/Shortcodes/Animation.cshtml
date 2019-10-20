@@ -1,9 +1,0 @@
-﻿@model ExpressMVC.Models.Shortcodes.AnimationModel
-
-
-<div class="appear-animation" 
-     data-appear-animation="@Model.Type.ToString()" 
-     data-appear-animation-delay="@Model.Delay" 
-     data-appear-animation-duration="1s">
-    @Html.Raw(Model.Content)
-</div>
