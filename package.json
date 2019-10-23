@@ -1,0 +1,30 @@
+{
+  "name": "zoopster.net",
+  "version": "1.0.0",
+  "description": "zoopster.net website",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoopster/zoopster.net.git"
+  },
+  "keywords": [
+    "zoopster",
+    "zoopster.net",
+    "buy",
+    "ai",
+    "ml",
+    "shopping"
+  ],
+  "author": "John Pugh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoopster/zoopster.net/issues"
+  },
+  "homepage": "https://github.com/zoopster/zoopster.net#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
